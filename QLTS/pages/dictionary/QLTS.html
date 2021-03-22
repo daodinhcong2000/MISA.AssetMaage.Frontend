@@ -8,14 +8,14 @@
     <link href="/css/common/layout.css" rel="stylesheet">
 
     <link href="/css/common/filter.css" rel="stylesheet">
-    <link href="/css/common/Header.css" rel="stylesheet">
+    <link href="/css/common/header.css" rel="stylesheet">
     <link href="/css/common/menu.css" rel="stylesheet">
 
 
     <link href="/css/common/table.css" rel="stylesheet">
     <!-- <link href="/css/common/button.css" rel="stylesheet"> -->
-    <link href="/css/pages/dictionary/employee.css" rel="stylesheet">
-    <link href="/css/pages/dictionary/formIput.css" rel="stylesheet">
+    <link href="/css/pages/dictionary/QLTS.css" rel="stylesheet">
+    <link href="/css/pages/dictionary/dialog.css" rel="stylesheet">
 </head>
 
 <body>
@@ -64,16 +64,14 @@
     <div class="body-right">
         <div class="header">
             <div class="header-left">
-                <p>Tài sản</p>
-                <div class="icon-report"></div>
-                <p>Danh sách tài sản</p>
+                <p id="text-header">Tài sản</p>
+                <div class="icon-seperator"></div>
+                <p id="text-header">Danh sách tài sản</p>
             </div>
             <div class="header-right">
-                <p>Sở tài chính</p>
-                <div>
-                    <select name="" id="">
-                        <option value="">2020</option>
-                    </select>
+                <p id="text-header">Sở tài chính</p>
+                <div class="year">
+                    Năm 2020
                 </div>
                 <div class="icon-question"></div>
                 <div class="icon-ring"></div>
@@ -99,403 +97,256 @@
                     </button>
                 </div>
             </div>
-            <div class="data-customer">
+            <div class="data">
                 <table id="tbListData" cellspacing="0" cellpadding="0" class="el-table__body" style="min-width: 100%;">
                     <thead class="has-gutter">
                         <tr class="el-table__row">
-                            <th colspan="1" rowspan="1" class="el-table_30_column_114 is-leaf" fieldName="CustomerCode">
-                                <div class="cell">Mã khách hàng</div>
+                            <th colspan="1" rowspan="1">
+                                <div class="cell">STT</div>
                             </th>
-                            <th colspan="1" rowspan="1" class="el-table_30_column_115 is-leaf" fieldName="FullName">
-                                <div class="cell">Họ và tên</div>
+                            <th colspan="1" rowspan="1">
+                                <div class="cell">NGÀY GHI TĂNG</div>
                             </th>
-                            <th colspan="1" rowspan="1" class="el-table_30_column_116 is-leaf" fieldName="GenderName">
-                                <div class="cell">Giới tính</div>
+                            <th colspan="1" rowspan="1">
+                                <div class="cell">MÃ TÀI SẢN</div>
                             </th>
-                            <th colspan="1" rowspan="1" class="el-table_30_column_116 is-leaf" fieldName="DateOfBirth">
-                                <div class="cell">Phòng ban</div>
+                            <th colspan="1" rowspan="1">
+                                <div class="cell">TÊN TÀI SẢN</div>
                             </th>
-                            <th colspan="1" rowspan="1" class="el-table_30_column_116 is-leaf"
-                                fieldName="CustomerGroupName" formatType="ddmmyyyy">
-                                <div class="cell">Ngày sinh</div>
+                            <th colspan="1" rowspan="1">
+                                <div class="cell">LOẠI TÀI SẢN</div>
                             </th>
-                            <th colspan="1" rowspan="1" class="el-table_30_column_116 is-leaf" fieldName="PhoneNumber">
-                                <div class="cell">Điện thoại</div>
+                            <th colspan="1" rowspan="1">
+                                <div class="cell">PHÒNG BAN</div>
                             </th>
-                            <th colspan="1" rowspan="1" class="el-table_30_column_116 is-leaf" fieldName="Email">
-                                <div class="cell">Email</div>
+                            <th colspan="1" rowspan="1">
+                                <div class="cell">NGUYÊN GIÁ</div>
                             </th>
-                            <th colspan="1" rowspan="1" class="el-table_30_column_116 is-leaf" fieldName="Address">
-                                <div class="cell">Địa chỉ</div>
-                            </th>
-                            <th colspan="1" rowspan="1" class="el-table_30_column_116 is-leaf" fieldName="DebitAmount"
-                                formatType="Money">
-                                <div class="cell">Lương</div>
-                            </th>
-                            <th colspan="1" rowspan="1" class="el-table_30_column_116 is-leaf"
-                                fieldName="MemberCardCode">
-                                <div class="cell">Vị trí</div>
-                            </th>
-                            <th class="gutter" style="width: 6px;"></th>
+                            <th colspan="1" rowspan="1">
+                                <div class="cell">CHỨC NĂNG</div>
+                            </th>   
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
-                        </tr>
-
-                        <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
                         <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
+                            <td>1</td>
+                            <td>29/09/2019</td>
+                            <td>TS00001</td>
+                            <td>Xe ô tô HONDA CIVIC</td>
+                            <td>Ô tô</td>
+                            <td>Phòng Hành chính tổng hợp</td>
+                            <td>754.9000.0000</td>
+                            <td></td>
                         </tr>
-                        <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
-                        </tr>
-                        <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
-                        </tr>
-
-                        <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
-                        </tr>
-                        <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
-                        </tr>
-                        <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
-                        </tr>
-                        <tr class="el-table__row">
-                            <td>KH1009</td>
-                            <td>Đào Huy Lịch</td>
-                            <td>Nam</td>
-                            <td>Vip1</td>
-                            <td>19/09/2000</td>
-                            <td>03589647865</td>
-                            <td>lichdao@gmail.com</td>
-                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
-                            <td>1.000.000</td>
-                            <td>8888</td>
-                        </tr>
+                        
 
                     </tbody>
                 </table>
             </div>
 
             <div class="footer-content">
-                <div class="number-customer">Hiển thị 1-10/1000 nhân viên</div>
-                <div class="page-number">
-                    <div class="first-page btn-footer-page"></div>
-                    <div class="prev-page btn-footer-page"></div>
-                    <div class="num-page btn-footer-page page-chose">1</div>
-                    <div class="num-page btn-footer-page">2</div>
-                    <div class="num-page btn-footer-page">3</div>
-                    <div class="num-page btn-footer-page">4</div>
-                    <div class="next-page btn-footer-page"></div>
-                    <div class="last-page btn-footer-page"></div>
-                </div>
-                <div class="number-customer">10 nhân viên / trang</div>
+                <div>Tổng số tài sản: 1.015</div>
+                <div>Tổng ngyên giá: 1.541.857.000</div>
             </div>
         </div>
     </div>
@@ -508,16 +359,7 @@
                 <h1>Thông tin khách hàng</h1>
                 <div class="icon-dialog" onclick="CloseDialog()"></div>
             </div>
-            <div class="content-dialog">
-                <div class="content-dialog-left">
-                    <div class="picture">
-                    </div>
-                    <div class="text-picture">
-                        <a>(Vui lòng chọn ảnh có định dạng </br> jpg, .jpge, .png, .gif.)</a>
-                    </div>
-
-
-                </div>
+            <!-- <div class="content-dialog">
                 <div class="content-dialog-right">
                     <div class="general-info">
                         <div class="info-header">
@@ -596,8 +438,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> 
+            </div> -->
             <div class="footer-dialog">
                 <div class="btn-function">
                     <button onclick="CloseDialog()">

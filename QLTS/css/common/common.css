@@ -19,23 +19,31 @@ font-family: "GoogleSans-Bold";
 src: url("../../content/font/GoogleSans-Bold.otf");
 }
 
-body::-webkit-scrollbar {
-    width: 0.5em;
-    scrollbar-width: thin;
+.body-left{
+  width: 249px;
+  height: 100vh;
+  border-right: 1px solid #bbbb;
+  font-family: 'GoogleSans-Regular';
+  background-color: #011239;
 }
- 
-body::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
- 
-body::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
-}
-
 
 .body-right{
-  width: calc(100% - 270px) ;
+  width: calc(100% - 282px) ;
   height: 100vh;
   
+}
+
+.body-right .content{
+  width: 100%;
+  height:calc(100% - 92px );
+  padding: 16px;
+}
+
+
+.footer-content{
+height: 60px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-right: 100px;
 }

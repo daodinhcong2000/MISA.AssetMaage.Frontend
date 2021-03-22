@@ -1,12 +1,22 @@
 table {
     border-collapse: collapse;
     width: 100%;
+    position: relative;
   }
   
 th, td {
 padding: 8px;
 text-align: left;
 border-bottom: 1px solid #ddd;
+}
+td{
+  border: 1px solid #ddd;
+  text-align: center;
+}
+th{
+  position: sticky;
+  top: 0px;
+  background-color: #ffffff;
 }
 tbody > tr:hover{
     cursor: pointer;
