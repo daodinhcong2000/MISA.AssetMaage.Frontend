@@ -1,0 +1,620 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Phần mềm quản lý nhà hàng cukcuk</title>
+    <link href="/css/common/common.css" rel="stylesheet">
+    <link href="/css/common/layout.css" rel="stylesheet">
+
+    <link href="/css/common/filter.css" rel="stylesheet">
+    <link href="/css/common/Header.css" rel="stylesheet">
+    <link href="/css/common/menu.css" rel="stylesheet">
+
+
+    <link href="/css/common/table.css" rel="stylesheet">
+    <!-- <link href="/css/common/button.css" rel="stylesheet"> -->
+    <link href="/css/pages/dictionary/employee.css" rel="stylesheet">
+    <link href="/css/pages/dictionary/formIput.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="body-left">
+        <div class="logo-box">
+            <div class="logo-1"></div>
+            <h1>QLTS.VN</h1>
+            <div class="icon-1"></div>
+        </div>
+        <div class="menu">
+            <div class="menu-item">
+                <div class="menu-icon nav-item-dashboard"></div>
+                <div class="menu-text">Tổng quan</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-icon nav-item-property"></div>
+                <div class="menu-text">Tài sản</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-icon  nav-item-tools"></div>
+                <div class="menu-text">Công cụ dụng cụ</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-icon nav-item-catagory"></div>
+                <div class="menu-text">Danh mục</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon nav-item-search"></div>
+                <div class="menu-text">Tra cứu</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-icon nav-item-system"></div>
+                <div class="menu-text">Hệ thống</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-icon nav-item-report"></div>
+                <div class="menu-text">Báo cáo</div>
+            </div>
+        </div>
+    </div>
+    <div class="body-right">
+        <div class="header">
+            <div class="header-left">
+                <p>Tài sản</p>
+                <div class="icon-report"></div>
+                <p>Danh sách tài sản</p>
+            </div>
+            <div class="header-right">
+                <p>Sở tài chính</p>
+                <div>
+                    <select name="" id="">
+                        <option value="">2020</option>
+                    </select>
+                </div>
+                <div class="icon-question"></div>
+                <div class="icon-ring"></div>
+                <div class="icon-divide"></div>
+                <div class="avatar-user"></div>
+                <div class="icon-dropdown"></div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="filter-bar">
+                <div class="filter-left">
+                    <input  type="text"
+                        placeholder="Tìm kiếm"
+                        class="input-search   " />
+                        <div class ="icon-search"></div>
+                </div>
+                <div class="filter-right">
+                    <button >Thêm
+                    </button>
+                    <button class="m-btn-refresh">
+                    </button>
+                    <button class="m-btn-delete">
+                    </button>
+                </div>
+            </div>
+            <div class="data-customer">
+                <table id="tbListData" cellspacing="0" cellpadding="0" class="el-table__body" style="min-width: 100%;">
+                    <thead class="has-gutter">
+                        <tr class="el-table__row">
+                            <th colspan="1" rowspan="1" class="el-table_30_column_114 is-leaf" fieldName="CustomerCode">
+                                <div class="cell">Mã khách hàng</div>
+                            </th>
+                            <th colspan="1" rowspan="1" class="el-table_30_column_115 is-leaf" fieldName="FullName">
+                                <div class="cell">Họ và tên</div>
+                            </th>
+                            <th colspan="1" rowspan="1" class="el-table_30_column_116 is-leaf" fieldName="GenderName">
+                                <div class="cell">Giới tính</div>
+                            </th>
+                            <th colspan="1" rowspan="1" class="el-table_30_column_116 is-leaf" fieldName="DateOfBirth">
+                                <div class="cell">Phòng ban</div>
+                            </th>
+                            <th colspan="1" rowspan="1" class="el-table_30_column_116 is-leaf"
+                                fieldName="CustomerGroupName" formatType="ddmmyyyy">
+                                <div class="cell">Ngày sinh</div>
+                            </th>
+                            <th colspan="1" rowspan="1" class="el-table_30_column_116 is-leaf" fieldName="PhoneNumber">
+                                <div class="cell">Điện thoại</div>
+                            </th>
+                            <th colspan="1" rowspan="1" class="el-table_30_column_116 is-leaf" fieldName="Email">
+                                <div class="cell">Email</div>
+                            </th>
+                            <th colspan="1" rowspan="1" class="el-table_30_column_116 is-leaf" fieldName="Address">
+                                <div class="cell">Địa chỉ</div>
+                            </th>
+                            <th colspan="1" rowspan="1" class="el-table_30_column_116 is-leaf" fieldName="DebitAmount"
+                                formatType="Money">
+                                <div class="cell">Lương</div>
+                            </th>
+                            <th colspan="1" rowspan="1" class="el-table_30_column_116 is-leaf"
+                                fieldName="MemberCardCode">
+                                <div class="cell">Vị trí</div>
+                            </th>
+                            <th class="gutter" style="width: 6px;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+                        <tr class="el-table__row">
+                            <td>KH1009</td>
+                            <td>Đào Huy Lịch</td>
+                            <td>Nam</td>
+                            <td>Vip1</td>
+                            <td>19/09/2000</td>
+                            <td>03589647865</td>
+                            <td>lichdao@gmail.com</td>
+                            <td>Lang Móng, Hoàn Sơn, Tiên Du, Bắc Ninh</td>
+                            <td>1.000.000</td>
+                            <td>8888</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="footer-content">
+                <div class="number-customer">Hiển thị 1-10/1000 nhân viên</div>
+                <div class="page-number">
+                    <div class="first-page btn-footer-page"></div>
+                    <div class="prev-page btn-footer-page"></div>
+                    <div class="num-page btn-footer-page page-chose">1</div>
+                    <div class="num-page btn-footer-page">2</div>
+                    <div class="num-page btn-footer-page">3</div>
+                    <div class="num-page btn-footer-page">4</div>
+                    <div class="next-page btn-footer-page"></div>
+                    <div class="last-page btn-footer-page"></div>
+                </div>
+                <div class="number-customer">10 nhân viên / trang</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="dialog">
+        <div class="model"></div>
+        <div class="dialog-content">
+            <div class="header-dialog">
+                <h1>Thông tin khách hàng</h1>
+                <div class="icon-dialog" onclick="CloseDialog()"></div>
+            </div>
+            <div class="content-dialog">
+                <div class="content-dialog-left">
+                    <div class="picture">
+                    </div>
+                    <div class="text-picture">
+                        <a>(Vui lòng chọn ảnh có định dạng </br> jpg, .jpge, .png, .gif.)</a>
+                    </div>
+
+
+                </div>
+                <div class="content-dialog-right">
+                    <div class="general-info">
+                        <div class="info-header">
+                            <h3>A.THÔNG TIN CHUNG:</h3>
+                            <div class="footer-header"></div>
+                        </div>
+                        <div class="input-content">
+                            <div class="input-content-left">
+                                <label>Mã nhân viên(*)</label>
+                                <input type="text" id="code" name="code">
+
+                                <label>Ngày sinh:</label>
+                                <input type="date" id="date" name="date">
+
+                                <label>Số CMTND/Căn cước(*)</label>
+                                <input type="text" id="code" name="code">
+
+                                <label>Nơi cấp</label>
+                                <input type="text" id="code" name="code">
+
+                                <label>Email(*)</label>
+                                <input type="text" id="code" name="code">
+
+                            </div>
+                            <div class="input-content-right">
+
+                                <label>Họ và tên(*)</label>
+                                <input type="text" id="code" name="code">
+
+                                <label>Giới tính:</label>
+                                <select name="" id="">
+                                    <option value="male">Nam</option>
+                                    <option value="Female">Nữ</option>
+                                </select>
+
+                                <label>Ngày cấp</label>
+                                <input type="text" id="code" name="code">
+
+
+                                <label>Số điện thoại(*)</label>
+                                <input type="text" id="code" name="code">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <div class="info-header">
+                            <h3>B.THÔNG TIN CÔNG VIỆC:</h3>
+                            <div class="footer-header"></div>
+                        </div>
+                        <div class="input-content">
+                            <div class="input-content-left">
+                                <label>Vị trí:</label>
+                                <select name="position" id="">
+                                    <option value="male">Nam</option>
+                                    <option value="Female">Nữ</option>
+                                </select>
+                                <label>Ngày sinh:</label>
+                                <input type="date" id="date" name="date">
+
+                                <label>Số CMTND/Căn cước(*)</label>
+                                <input type="text" id="code" name="code">
+
+                            </div>
+                            <div class="input-content-right">
+                                <label>Phòng ban:</label>
+                                <select name="" id="">
+                                    <option value="male">Nam</option>
+                                    <option value="Female">Nữ</option>
+                                </select>
+                                <label>Ngày sinh:</label>
+                                <input type="date" id="date" name="date">
+
+                                <label>Số CMTND/Căn cước(*)</label>
+                                <input type="text" id="code" name="code">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-dialog">
+                <div class="btn-function">
+                    <button onclick="CloseDialog()">
+                        <div class="btn-text"> Hủy </div>
+                    </button>
+                    <button>
+                        <div class="m-btn-icon icon-save"></div>
+                        <div class="btn-text"> Lưu </div>
+                    </button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/pages/dictionary/employee.js"></script>
+</body>
+
+</html>

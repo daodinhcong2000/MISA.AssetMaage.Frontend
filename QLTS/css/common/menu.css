@@ -1,0 +1,94 @@
+
+/* Định dang cho layout trái */
+.body-left{
+    width: 249px;
+    height: 100vh;
+    border-right: 1px solid #bbbb;
+    font-family: 'GoogleSans-Regular';
+    /* font-size: 12px; */
+    background-color: purple;
+}
+    .body-left .logo-box{
+        display: flex;
+        width: 100%;
+        height: 60px;
+        align-items: center;
+        cursor: pointer;
+        color: #ffffff;
+    }
+        .body-left .logo-box .icon-1{
+            width: 30px;
+            height: 30px;
+            margin-left: 20px;
+            background-image: url("/content/Icon/hamburger-menu.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            background-position: center;
+        }
+        .body-left .logo-box .logo-1{
+            width: 50px;
+            height: 35px;
+            margin-left: 30px;
+            margin-right: 5px;
+            background-image: url("/content/Icon/logo-qlts.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            background-position: center;
+        }
+
+    .body-left .menu .menu-item{
+        width: 100%;
+        height: 44px;
+        line-height: 44px;
+        display: flex;
+        align-items: center;
+        color: #ffffff;
+        font-size: 18px;
+        
+    }
+
+    .body-left .menu .menu-item:hover{
+        cursor: pointer;
+        background-color: #bbbb;
+    }
+
+    .body-left .menu .menu-item .menu-icon{
+        width: 29px;
+        height: 30px;
+        background-size: contain;
+        background-position: center;
+        margin-left: 30px;
+        margin-right: 10px;
+        background-repeat: no-repeat;
+    }
+
+    .body-left .menu .nav-item-dashboard {
+        background-image: url(/content/icon/computer-line.svg);
+    }
+
+    .body-left .menu .nav-item-property {
+        background-image: url(/content/Icon/community-line.svg);
+    }
+
+    .body-left .menu .nav-item-tools {
+        background-image: url(/content/icon/paint-brush-line.svg);
+    }
+
+    .body-left .menu .nav-item-catagory {
+        background-image: url(/content/icon/);
+    }
+
+    .body-left .menu .nav-item-search {
+        background-image: url(/content/icon/search-eye-line.svg);
+    }
+
+    .body-left .menu .nav-item-system {
+        background-image: url(/content/Icon/settings.svg);
+    }
+
+    .body-left .menu .nav-item-report {
+        background-image: url(/content/icon/pie-chart-line.svg);
+    }
+    

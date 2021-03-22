@@ -1,0 +1,29 @@
+﻿.data-customer{
+    height: calc(100% - 150px);
+    overflow: scroll;
+    
+}
+
+#tbListData > tbody{
+    overflow: scroll;
+}
+
+.data-customer .number-customer{
+
+   text-align: center;
+}
+
+.data-customer::-webkit-scrollbar {
+    width: 0.5em;
+    scrollbar-width: thin;
+}
+ 
+.data-customer::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+.data-customer::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius:1.5rem;
+}

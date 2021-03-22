@@ -1,0 +1,15 @@
+<svg id="pie-chart-line" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #f5f5f5;
+      }
+    </style>
+  </defs>
+  <path id="Path_25" data-name="Path 25" class="cls-1" d="M0,0H24V24H0Z"/>
+  <path id="Path_26" data-name="Path 26" class="cls-2" d="M12,22A10,10,0,0,1,9,2.458V4.582A8,8,0,1,0,19.418,15h2.124A10,10,0,0,1,12,22Zm9.95-9H11V2.05c.329-.033.663-.05,1-.05A10,10,0,0,1,22,12C22,12.337,21.983,12.671,21.95,13ZM13,4.062V11h6.938A8,8,0,0,0,13,4.062Z"/>
+</svg>

@@ -1,0 +1,108 @@
+
+/* thanh search và reset */
+.filter-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 20px 0 20px 0;
+}
+
+/*phần search*/
+.filter-left{
+    width: 200px;
+    position: relative;
+}
+input{
+    padding: 10px 16px;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid #bbbbbb;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus {
+    border-color: #019160;
+}
+input::placeholder{
+    font-size: 11px;
+}
+
+.input-search {
+    padding-right: 40px;
+    width: 200px;
+}
+
+.icon-search {
+    width: 39px;
+    height: 39px;
+    background-image: url('/content/icon/search-eye-line.svg');
+    background-repeat: no-repeat;
+    background-position:center;
+    background-color: rosybrown;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+}
+
+
+
+
+/*thanh reset*/
+.filter-bar .filter-right {
+    position:absolute;
+    right: 16px;
+    display: flex;
+    
+}
+
+.filter-bar .filter-right > button {
+    width:30px;
+    height: 50px;
+    margin-left: 10px;
+    
+}
+.filter-bar .filter-right > button:first-child {
+    width:100px;
+    height: 50px;
+    margin-left: 10px;
+    
+}
+.filter-right .m-btn-refresh {
+    background-image: url('/content/icon/refresh.svg');
+    background-repeat: no-repeat;
+    width: 40px;
+    border: 1px solid #bbbbbb;
+    background-color: #ffffff;
+    border-radius: 4px;
+    height: 40px;
+    color: #000000;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    background-position: center;
+    
+}
+.filter-right .m-btn-delete {
+    background-image: url('/content/icon/trash.svg');
+    background-repeat: no-repeat;
+    width: 40px;
+    border: 1px solid #bbbbbb;
+    background-color: #ffffff;
+    border-radius: 4px;
+    height: 40px;
+    color: #000000;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    background-position: center;
+    
+}
+/* end */

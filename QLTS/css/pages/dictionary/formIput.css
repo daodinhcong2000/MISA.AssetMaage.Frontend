@@ -1,0 +1,184 @@
+
+ .dialog{
+     position: fixed;
+     top : 0px;
+     left: 0px;
+     bottom: 0;
+     right: 0;
+     display: none;
+  
+ }
+
+ .model{
+    position: fixed;
+    top : 0px;
+    left: 0px;
+    bottom: 0;
+    right: 0;
+    background-color: #000;
+    opacity: 0.5;
+ }
+ 
+ .dialog-content{
+    position: absolute;
+    height: 740px;
+    width: 800px;
+    left: calc(50% - 400px);
+    top: calc(50% - 370px);
+    background-color: #fff;
+    z-index: 1;
+    border-radius: 4px;
+}
+    }
+        .header-dialog{
+            position: absolute;
+            width: 100%;
+            height: 60px;
+            display: flex;
+        }
+            .header-dialog > h1{
+                margin-left: 16px;
+            }
+            .header-dialog .icon-dialog {
+                background-image: url('/content/icon/x.svg');
+                background-repeat: no-repeat;
+                background-position: 16px center;
+                height: 50px;
+                width: 50px;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                cursor: pointer;
+            }
+        .content-dialog{
+            position: absolute;
+            top: 60px;
+            height: calc(100% - 120px);
+            width: 100%; 
+            display: flex;
+        }   
+            .content-dialog .content-dialog-left{
+                position: absolute;
+                height: 100%;
+                width: 200px; 
+                display: inline;
+                
+               
+            }   
+                .content-dialog-left .picture{
+                    height: 150px;
+                    width: 150px;
+                    background-image: url(/content/img/default-avatar.jpg);
+                    background-size: 152px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border-radius: 50%;
+                    border: 1px solid #bbb;
+                    position: absolute;
+                    right: 25px;
+                    
+                }
+                .content-dialog-left .text-picture{
+                    position: absolute;
+                    top: 150px;
+                    right: 25px;
+                    height: 150px;
+                    width: 160px;
+                    text-align: center;
+                    
+                }
+
+            .content-dialog .content-dialog-right{
+                position: absolute;
+                right: 0px;
+                height: 100%;
+                width: 580px; 
+                padding-right: 16px;
+            } 
+
+
+                .content-dialog-right .general-info{
+                    width: 100%;
+                    height: 58%;
+                }
+                    .info-header{
+                        width: 100%;
+                        height: 30px;
+                    }
+                        .info-header > h3{
+                            margin-bottom: 5px;
+                        }
+                        .info-header .footer-header{
+                            height: 5px;
+                            width: 90px;
+                            background-color: seagreen;
+                            border-radius: 3px;
+                        }
+                    
+                    .input-content{
+                        width: 100%;
+                        height: calc(100% - 30px);
+                        position: relative;
+                        margin-top: 5px;
+                    }
+
+                        .input-content input{
+                            margin: 1px 0px 16px 0px;
+                            height: 35px;
+                        }
+                        
+                        .input-content select{
+                            margin: 1px 0px 16px 0px;
+                            height: 35px;
+                            width: 100%;
+                        }
+                        .input-content .input-content-left{
+                            height: 100%;
+                            width: 49%;
+                        }
+                        .input-content .input-content-right{
+                            height: 100%;
+                            width: 49%;
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            padding-left: 10px;
+                        }
+
+                .content-dialog-right .work-info{
+                    position: relative;
+                    width: 100%;
+                    height: 42%;
+                }
+        .footer-dialog{
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            height: 60px;
+          
+                
+        }
+
+            .btn-function{
+                width: 320px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                position: absolute;
+                right: 16px;
+            }
+
+                .btn-function > button{
+                    width: 80px;
+                    margin-right: 16px;
+                }
+                .btn-function > button:first-child{
+                    background-color: #fff;
+                    color: black;
+                }
+                .btn-function > button:first-child:hover{
+                    background-color: #ccc;
+                }
+
+            
+    

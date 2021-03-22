@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f5f5f5;
+      }
+    </style>
+  </defs>
+  <g id="Group_1216" data-name="Group 1216" transform="translate(-151 -18)">
+    <rect id="Rectangle_1550" data-name="Rectangle 1550" class="cls-1" width="16" height="2" rx="1" transform="translate(151 18)"/>
+    <rect id="Rectangle_1551" data-name="Rectangle 1551" class="cls-1" width="16" height="2" rx="1" transform="translate(151 24)"/>
+    <rect id="Rectangle_1552" data-name="Rectangle 1552" class="cls-1" width="16" height="2" rx="1" transform="translate(151 30)"/>
+  </g>
+</svg>

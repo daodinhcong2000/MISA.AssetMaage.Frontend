@@ -1,0 +1,69 @@
+
+    .body-right .header{
+        width: 100%;
+        height: 40px;
+        border-bottom: 1px solid #bbbb;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    /* định nghĩa cho phần header bên trái */
+        .body-right .header .header-left{
+           display: flex;
+        }
+             .header-left .icon-report {
+                width: 10px;
+                height: 40px;
+                background-image: url("/content/Icon/seperator.svg");
+                background-repeat: no-repeat;
+                background-position:center;
+         }
+    /* Định nghĩa css cho phần bên phải */
+        .body-right .header .header-right{
+            display: flex;
+            position: absolute;
+            right: 0px;
+            align-items: center;
+            justify-items:center;
+        }
+
+        .header-right .icon-question{
+            width: 30px;
+            height: 30px;
+            background-image: url("/content/Icon/help.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .header-right .icon-ring{
+            width: 30px;
+            height: 30px;
+            background-image: url("/content/Icon/bell.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .header-right .icon-divide{
+            width: 30px;
+            height: 30px;
+            background-image: url("/content/Icon/Divider.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .header-right .avatar-user{
+            width: 30px;
+            height: 30px;
+            background-image: url("/content/img/default-avatar.jpg");
+            background-repeat: no-repeat;
+            background-position: center;        
+        }
+
+        .header-right .icon-dropdown{
+            width: 30px;
+            height: 30px;
+            background-image: url("/content/Icon/i_arrow_up_small.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+

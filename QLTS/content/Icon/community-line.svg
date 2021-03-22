@@ -1,0 +1,15 @@
+<svg id="community-line" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #f5f5f5;
+      }
+    </style>
+  </defs>
+  <path id="Path_21" data-name="Path 21" class="cls-1" d="M0,0H24V24H0Z"/>
+  <path id="Path_22" data-name="Path 22" class="cls-2" d="M21,21H3a1,1,0,0,1-1-1V12.487a1,1,0,0,1,.343-.754L6,8.544V4A1,1,0,0,1,7,3H21a1,1,0,0,1,1,1V20A1,1,0,0,1,21,21ZM9,19h3V12.942L8,9.454,4,12.942V19H7V15H9Zm5,0h6V5H8V7.127a.994.994,0,0,1,.657.247l5,4.359a1,1,0,0,1,.343.754Zm2-8h2v2H16Zm0,4h2v2H16Zm0-8h2V9H16ZM12,7h2V9H12Z"/>
+</svg>

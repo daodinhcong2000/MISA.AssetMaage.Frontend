@@ -1,0 +1,20 @@
+button{
+    /* display: flex;
+    align-items: center;
+    /* height: 40px; */
+    /* padding: 0px 24px 0px 24px; */
+    /* background-color: #019160;
+    border-radius: 4px;
+    font-family: GoogleSans-Regular;
+    align-items: center;
+    color: #ffffff ;
+    outline: none;
+    border: none; */
+    /* min-width: 150px; */
+    /* justify-content: center;
+} */
+
+button:hover{
+    background-color: #2FBE8E;
+    cursor: pointer;
+}
