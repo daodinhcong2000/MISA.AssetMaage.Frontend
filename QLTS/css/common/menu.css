@@ -10,9 +10,9 @@ cursor: pointer;
 color: #ffffff;
 }
 .body-left .logo-box .icon-1{
-width: 25px;
-height: 25px;
-margin-left: 35px;
+width: 20px;
+height: 20px;
+margin-left: 30px;
 background-image: url("/content/Icon/hamburger-menu.svg");
 background-size: contain;
 background-repeat: no-repeat;
@@ -38,7 +38,7 @@ line-height: 44px;
 display: flex;
 align-items: center;
 color: #ffffff;
-font-size: 18px;
+font-size: 14px;
 
 }
 

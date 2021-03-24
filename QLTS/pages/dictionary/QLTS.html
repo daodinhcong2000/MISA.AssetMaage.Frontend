@@ -71,7 +71,8 @@
             <div class="header-right">
                 <p id="text-header">Sở tài chính</p>
                 <div class="year">
-                    Năm 2020
+                    <p>Năm 2020</p>
+                    <div class="icon-updown"></div>
                 </div>
                 <div class="icon-question"></div>
                 <div class="icon-ring"></div>
@@ -83,13 +84,11 @@
         <div class="content">
             <div class="filter-bar">
                 <div class="filter-left">
-                    <input  type="text"
-                        placeholder="Tìm kiếm"
-                        class="input-search   " />
-                        <div class ="icon-search"></div>
+                    <input type="text" placeholder="Tìm kiếm" class="input-search   " />
+                    <div class="icon-search"></div>
                 </div>
                 <div class="filter-right">
-                    <button >Thêm
+                    <button>Thêm
                     </button>
                     <button class="m-btn-refresh">
                     </button>
@@ -124,7 +123,7 @@
                             </th>
                             <th colspan="1" rowspan="1">
                                 <div class="cell">CHỨC NĂNG</div>
-                            </th>   
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -338,7 +337,7 @@
                             <td>754.9000.0000</td>
                             <td></td>
                         </tr>
-                        
+
 
                     </tbody>
                 </table>
@@ -356,102 +355,74 @@
         <div class="model"></div>
         <div class="dialog-content">
             <div class="header-dialog">
-                <h1>Thông tin khách hàng</h1>
+                <h1>Ghi tăng tài sản</h1>
                 <div class="icon-dialog" onclick="CloseDialog()"></div>
             </div>
-            <!-- <div class="content-dialog">
+            <div class="content-dialog">
+                <div class="content-dialog-left">
+                    <div>
+                        <label>Mã tài sản (*)</label>
+                        <select name="" id="">
+                            <option value="">TS00004</option>
+                        </select>
+                    </div>
+                    <div><label>Mã phòng ban</label>
+                        <select name="" id="">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Mã loại tài sản</label>
+                        <select name="" id="">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Ngày ghi tăng</label>
+                        <input type="date" name="" id="">
+                    </div>
+                    <div>
+                        <label>Nguyên giá</label>
+                        <input type="text">
+                    </div>
+                </div>
                 <div class="content-dialog-right">
-                    <div class="general-info">
-                        <div class="info-header">
-                            <h3>A.THÔNG TIN CHUNG:</h3>
-                            <div class="footer-header"></div>
+                    <div>
+                        <label>Tên tài sản</label>
+                        <input type="text" id="input-defalut">
+                    </div>
+                    <div>
+                        <label>Tên phòng ban</label>
+                        <input type="text" name="" id="input-defalut">
+                    </div>
+                    <div>
+                        <label>Tên loại tài sản</label>
+                        <input type="text" id="input-defalut">
+                    </div>
+                    <div class="UseTime">
+                        <div>
+                            <label>Thời gian sử dụng (năm)</label>
+                            <input type="text" name="" id="">
                         </div>
-                        <div class="input-content">
-                            <div class="input-content-left">
-                                <label>Mã nhân viên(*)</label>
-                                <input type="text" id="code" name="code">
-
-                                <label>Ngày sinh:</label>
-                                <input type="date" id="date" name="date">
-
-                                <label>Số CMTND/Căn cước(*)</label>
-                                <input type="text" id="code" name="code">
-
-                                <label>Nơi cấp</label>
-                                <input type="text" id="code" name="code">
-
-                                <label>Email(*)</label>
-                                <input type="text" id="code" name="code">
-
-                            </div>
-                            <div class="input-content-right">
-
-                                <label>Họ và tên(*)</label>
-                                <input type="text" id="code" name="code">
-
-                                <label>Giới tính:</label>
-                                <select name="" id="">
-                                    <option value="male">Nam</option>
-                                    <option value="Female">Nữ</option>
-                                </select>
-
-                                <label>Ngày cấp</label>
-                                <input type="text" id="code" name="code">
-
-
-                                <label>Số điện thoại(*)</label>
-                                <input type="text" id="code" name="code">
-
-                            </div>
+                        <div>
+                            <label>Tỷ lệ hao mòn (%)</label>
+                            <input type="text" name="" id="">
                         </div>
                     </div>
-                    <div class="work-info">
-                        <div class="info-header">
-                            <h3>B.THÔNG TIN CÔNG VIỆC:</h3>
-                            <div class="footer-header"></div>
-                        </div>
-                        <div class="input-content">
-                            <div class="input-content-left">
-                                <label>Vị trí:</label>
-                                <select name="position" id="">
-                                    <option value="male">Nam</option>
-                                    <option value="Female">Nữ</option>
-                                </select>
-                                <label>Ngày sinh:</label>
-                                <input type="date" id="date" name="date">
-
-                                <label>Số CMTND/Căn cước(*)</label>
-                                <input type="text" id="code" name="code">
-
-                            </div>
-                            <div class="input-content-right">
-                                <label>Phòng ban:</label>
-                                <select name="" id="">
-                                    <option value="male">Nam</option>
-                                    <option value="Female">Nữ</option>
-                                </select>
-                                <label>Ngày sinh:</label>
-                                <input type="date" id="date" name="date">
-
-                                <label>Số CMTND/Căn cước(*)</label>
-                                <input type="text" id="code" name="code">
-                            </div>
-                        </div>
+                    <div class="UsePrice">
+                        <label>Giá trị hao mòn năm</label>
+                        <input type="text">
                     </div>
-                </div> 
-            </div> -->
-            <div class="footer-dialog">
-                <div class="btn-function">
-                    <button onclick="CloseDialog()">
-                        <div class="btn-text"> Hủy </div>
-                    </button>
-                    <button>
-                        <div class="m-btn-icon icon-save"></div>
-                        <div class="btn-text"> Lưu </div>
-                    </button>
                 </div>
 
-
+            </div>
+            <div class="footer-dialog">
+                    <button  class ="btn-cancle">
+                        <div class="btn-text"> Hủy </div>
+                    </button>
+                    <button class ="btn-save">
+                        <div class="btn-text"> Lưu </div>
+                    </button>
             </div>
         </div>
     </div>

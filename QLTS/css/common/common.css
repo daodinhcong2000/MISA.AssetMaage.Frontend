@@ -20,7 +20,7 @@ src: url("../../content/font/GoogleSans-Bold.otf");
 }
 
 .body-left{
-  width: 249px;
+  width: 229px;
   height: 100vh;
   border-right: 1px solid #bbbb;
   font-family: 'GoogleSans-Regular';
@@ -28,7 +28,7 @@ src: url("../../content/font/GoogleSans-Bold.otf");
 }
 
 .body-right{
-  width: calc(100% - 282px) ;
+  width: calc(100% - 262px) ;
   height: 100vh;
   
 }
