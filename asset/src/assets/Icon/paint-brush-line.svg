@@ -1,0 +1,15 @@
+<svg id="paint-brush-line" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #f5f5f5;
+      }
+    </style>
+  </defs>
+  <path id="Path_27" data-name="Path 27" class="cls-1" d="M0,0H24V24H0Z"/>
+  <path id="Path_28" data-name="Path 28" class="cls-2" d="M5,5V8H19V5ZM4,3H20a1,1,0,0,1,1,1V9a1,1,0,0,1-1,1H4A1,1,0,0,1,3,9V4A1,1,0,0,1,4,3Zm2,9h6a1,1,0,0,1,1,1v3h1v6H10V16h1V14H5a1,1,0,0,1-1-1V11H6Zm11.732,1.732L19.5,11.964l1.768,1.768a2.5,2.5,0,1,1-3.536,0Z"/>
+</svg>

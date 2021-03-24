@@ -1,0 +1,98 @@
+
+/* thanh search và reset */
+.filter-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding-bottom: 16px;
+}
+
+/*phần search*/
+.filter-left{
+    width: 200px;
+    position: relative;
+}
+input{
+    padding: 10px 16px;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid #bbbbbb;
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus {
+    border-color: #019160;
+}
+input::placeholder{
+    font-size: 11px;
+}
+
+.input-search {
+    padding-right: 40px;
+    width: 200px;
+}
+
+.icon-search {
+    width: 30px;
+    height: 30px;
+    background-image: url(../../assets/Icon/search-eye-line.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+}
+
+
+
+
+/*thanh reset*/
+.filter-bar .filter-right {
+    position:absolute;
+    right: 16px;
+    display: flex;
+    
+}
+
+.filter-bar .filter-right > button {
+    width:30px;
+    height: 30px;
+    margin-left: 10px;
+    padding: 0px;
+    
+}
+.filter-bar .filter-right > button:first-child {
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #00abfe;
+}
+.filter-right .m-btn-refresh {
+    background-image: url('../../assets/Icon/refresh.svg');
+    background-repeat: no-repeat;
+    border: 1px solid #bbbbbb;
+    background-color: #ffffff;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    background-position: center;
+    
+}
+.filter-right .m-btn-delete {
+    background-image: url('../../assets/Icon/trash.svg');
+    background-repeat: no-repeat;
+    border: 1px solid #bbbbbb;
+    background-color: #ffffff;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    background-position: center;
+    
+}
+/* end */

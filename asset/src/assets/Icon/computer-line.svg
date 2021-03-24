@@ -1,0 +1,15 @@
+<svg id="computer-line" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #f5f5f5;
+      }
+    </style>
+  </defs>
+  <path id="Path_29" data-name="Path 29" class="cls-1" d="M0,0H24V24H0Z"/>
+  <path id="Path_30" data-name="Path 30" class="cls-2" d="M4,16H20V5H4Zm9,2v2h4v2H7V20h4V18H2.992A1,1,0,0,1,2,16.993V4.007A1.007,1.007,0,0,1,2.992,3H21.008A1,1,0,0,1,22,4.007V16.993A1.007,1.007,0,0,1,21.008,18Z"/>
+</svg>

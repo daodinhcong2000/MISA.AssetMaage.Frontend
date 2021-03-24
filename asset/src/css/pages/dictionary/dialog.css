@@ -1,0 +1,144 @@
+
+ .dialog{
+     position: fixed;
+     top : 0px;
+     left: 0px;
+     bottom: 0;
+     right: 0;
+     /* display: none; */
+  
+ }
+
+ .model{
+    position: fixed;
+    top : 0px;
+    left: 0px;
+    bottom: 0;
+    right: 0;
+    background-color: #000;
+    opacity: 0.5;
+ }
+ 
+ .dialog-content{
+    position: absolute;
+    height: 500px;
+    width: 700px;
+    left: calc(50% - 280px);
+    top: calc(50% - 200px);
+    background-color: #fff;
+    z-index: 1;
+    border-radius: 4px;
+}
+    
+        .header-dialog{
+            position: absolute;
+            width: 100%;
+            height: 60px;
+            display: flex;
+        }
+            .header-dialog > h1{
+                margin-left: 16px;
+            }
+            .header-dialog .icon-dialog {
+                background-image: url('../../../assets/Icon/cancel.svg');
+                background-repeat: no-repeat;
+                background-position: 16px center;
+                height: 50px;
+                width: 50px;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                cursor: pointer;
+            }
+        .content-dialog{
+            position: absolute;
+            top: 60px;
+            height: calc(100% - 120px);
+            width: 100%; 
+            display: flex;
+        }   
+            .content-dialog .content-dialog-left{
+                position: absolute;
+                height: 100%;
+                width: 260px; 
+                display: inline;
+                background-color: #fff;
+                padding: 0px 16px ;
+            }   
+
+            .content-dialog-left > div > select,input {
+                width: 100%;
+                height: 32px;
+                border: 1px solid #CCCC;
+                border-radius: 5px;
+                margin-bottom: 16px;
+                margin-top: 4px;
+            }
+
+           
+
+            .content-dialog .content-dialog-right{
+                position: absolute;
+                right: 0px;
+                height: 100%;
+                width: 373px; 
+                padding-right: 16px;
+            } 
+            .content-dialog-right .UseTime{
+                display: flex;
+            }
+            
+            .content-dialog-right .UseTime > div:first-child{
+                padding-right: 30px;
+            }
+
+            .content-dialog-right .UsePrice {
+                width: 180px;
+            }
+            #input-defalut{
+                background-color: #f5f5f5;
+            }
+
+
+                
+                  
+        .footer-dialog{
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            height: 60px;
+            background-color: #f5f5f5;
+            display: flex;
+            
+        }
+        .footer-dialog > button{
+            position: absolute;
+            height: 32px;
+            min-width: 100px;
+            top: 16px;
+            border-radius: 5px;
+        }
+
+
+        .footer-dialog .btn-save{
+            right: 16px;
+            height: 32px;
+            border:none;
+            background-color: #019160;
+            
+           
+        }
+
+        .footer-dialog .btn-cancle{
+            left: 16px;
+            height: 32px;
+            background-color: #ffffff;
+            border:1px solid #CCCCCC;
+        }
+
+            
+
+    
+
+            
+    
