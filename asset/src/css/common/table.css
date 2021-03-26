@@ -9,12 +9,14 @@ th, td {
 padding: 8px;
 text-align: left;
 border-bottom: 1px solid #ddd;
-/* max-width: 100px; */
+max-width: 99px;
 
 }
 td{
   border: 1px solid #ddd;
-  text-align: center;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis; 
  
 }
 th{

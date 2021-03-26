@@ -22,7 +22,6 @@
         <thead class="has-gutter">
           <tr class="el-table__row">
             <th style="width: 3%">STT</th>
-            <th class="cell-date" style="width: 10%">NGÀY GHI TĂNG</th>
             <th style="width: 10%">MÃ TÀI SẢN</th>
             <th style="width: 25%">TÊN TÀI SẢN</th>
             <th style="width: 12%">LOẠI TÀI SẢN</th>
@@ -37,13 +36,9 @@
             v-for="(asset, index) in assets"
             @mouseover="showOperation()"
             @mouseout="offOperation()"
-            @click="showDetail(asset)"
             :key="index"
           >
             <td style="width: 3%">{{ index + 1 }}</td>
-            <td style="width: 10%" class="cell-date">
-              {{ formatDate(asset.increaseDate) }}
-            </td>
             <td style="width: 10%">{{ asset.assetCode }}</td>
             <td style="width: 25%">{{ asset.assetName }}</td>
             <td style="width: 12%">
@@ -57,8 +52,10 @@
             </td>
             <td style="width: 10%" class="asset-operation">
               <div class="icon-group" v-show="operation">
-                <div class="icon icon-edit"></div>
-                <div class="icon icon-delete"></div>
+                <div class="icon " @click="showDetail(asset)">
+                  <i class="icon far fa-edit"></i>
+                </div>
+                <div class="icon icon-delete" @click="deleteAsset(asset)"></div>
                 <div class="icon icon-history"></div>
               </div>
             </td>
@@ -75,6 +72,9 @@
       v-show="currentState"
       @closeDialog="closeDialog()"
       v-bind:asset="asset"
+      v-bind:departments="departments"
+      v-bind:assetTypes="assetTypes"
+      @changeAsset="changeAsset()"
     />
   </div>
 </template>
@@ -105,6 +105,7 @@ export default {
     //thêm dữ liệu tài sản
     AddAsset() {
       this.currentState = true;
+      this.asset = {};
     },
     //Xem dữ liệu tài sản
     showDetail(asset) {
@@ -118,6 +119,7 @@ export default {
        this.asset.departmentCode = this.departments.find(
         (department) => department.departmentId === asset.departmentId
       )?.departmentCode;
+      console.log(this.asset.departmentCode);
       this.asset.assetTypeCode = this.assetTypes.find(
         (assetType) => assetType.assetTypeId === asset.assetTypeId
       )?.assetTypeCode;
@@ -126,6 +128,12 @@ export default {
     //Đóng bản thêm dữ liệu
     closeDialog() {
       this.currentState = false;
+    },
+
+    //Xóa 1 bản ghi
+    deleteAsset(asset){
+     alert(asset.data);
+     console.log(asset);
     },
 
     ///Định dạng tiền
@@ -162,6 +170,10 @@ export default {
     offOperation() {
       this.operation = true;
     },
+
+    changeAsset(){
+      console.log(this.asset);
+    }
   },
 
   ///Lấy dữ liệu từ database
