@@ -21,242 +21,47 @@
       >
         <thead class="has-gutter">
           <tr class="el-table__row">
-            <th colspan="1" rowspan="1">
-              <div class="cell">STT</div>
-            </th>
-            <th colspan="1" rowspan="1">
-              <div class="cell">NGÀY GHI TĂNG</div>
-            </th>
-            <th colspan="1" rowspan="1">
-              <div class="cell">MÃ TÀI SẢN</div>
-            </th>
-            <th colspan="1" rowspan="1">
-              <div class="cell">TÊN TÀI SẢN</div>
-            </th>
-            <th colspan="1" rowspan="1">
-              <div class="cell">LOẠI TÀI SẢN</div>
-            </th>
-            <th colspan="1" rowspan="1">
-              <div class="cell">PHÒNG BAN</div>
-            </th>
-            <th colspan="1" rowspan="1">
-              <div class="cell">NGUYÊN GIÁ</div>
-            </th>
-            <th colspan="1" rowspan="1">
-              <div class="cell">CHỨC NĂNG</div>
-            </th>
+            <th style="width: 3%">STT</th>
+            <th class="cell-date" style="width: 10%">NGÀY GHI TĂNG</th>
+            <th style="width: 10%">MÃ TÀI SẢN</th>
+            <th style="width: 25%">TÊN TÀI SẢN</th>
+            <th style="width: 12%">LOẠI TÀI SẢN</th>
+            <th style="width: 20%">PHÒNG BAN</th>
+            <th class="cell-number" style="width: 10%">NGUYÊN GIÁ</th>
+            <th style="width: 10%">CHỨC NĂNG</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
-          </tr>
-          <tr class="el-table__row">
-            <td>1</td>
-            <td>29/09/2019</td>
-            <td>TS00001</td>
-            <td>Xe ô tô HONDA CIVIC</td>
-            <td>Ô tô</td>
-            <td>Phòng Hành chính tổng hợp</td>
-            <td>754.9000.0000</td>
-            <td></td>
+          <tr
+            class="el-table__row"
+            v-for="(asset, index) in assets"
+            @mouseover="showOperation()"
+            @mouseout="offOperation()"
+            @click="showDetail(asset)"
+            :key="index"
+          >
+            <td style="width: 3%">{{ index + 1 }}</td>
+            <td style="width: 10%" class="cell-date">
+              {{ formatDate(asset.increaseDate) }}
+            </td>
+            <td style="width: 10%">{{ asset.assetCode }}</td>
+            <td style="width: 25%">{{ asset.assetName }}</td>
+            <td style="width: 12%">
+              {{ getAssetTypeName(asset.assetTypeId) }}
+            </td>
+            <td style="width: 20%">
+              {{ getDepartmentName(asset.departmentId) }}
+            </td>
+            <td style="width: 10%" class="cell-number">
+              {{ formatCurrency(asset.originalPrice) }}
+            </td>
+            <td style="width: 10%" class="asset-operation">
+              <div class="icon-group" v-show="operation">
+                <div class="icon icon-edit"></div>
+                <div class="icon icon-delete"></div>
+                <div class="icon icon-history"></div>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -266,14 +71,19 @@
       <div>Tổng số tài sản: 1.015</div>
       <div>Tổng ngyên giá: 1.541.857.000</div>
     </div>
-    <AssetDetail v-show="currentState" @closeDialog="closeDialog()" />
+    <AssetDetail
+      v-show="currentState"
+      @closeDialog="closeDialog()"
+      v-bind:asset="asset"
+    />
   </div>
 </template>
 
 
 <script>
 import AssetDetail from "./AssetDetail";
-
+import axios from "axios";
+import moment from "moment";
 export default {
   name: "Asset",
   components: {
@@ -283,15 +93,97 @@ export default {
   data: function () {
     return {
       currentState: false,
+      BASE_URL: "https://localhost:44302",
+      assets: [],
+      assetTypes: [],
+      departments: [],
+      operation: true,
+      asset: {},
     };
   },
   methods: {
+    //thêm dữ liệu tài sản
     AddAsset() {
       this.currentState = true;
     },
+    //Xem dữ liệu tài sản
+    showDetail(asset) {
+      this.asset = asset;
+      this.asset.departmentName = this.departments.find(
+        (department) => department.departmentID === asset.departmentId
+      )?.departmentName;
+      this.asset.assetTypeName = this.assetTypes.find(
+        (assetType) => assetType.assetTypeId === asset.assetTypeId
+      )?.assetTypeName;
+       this.asset.departmentCode = this.departments.find(
+        (department) => department.departmentId === asset.departmentId
+      )?.departmentCode;
+      this.asset.assetTypeCode = this.assetTypes.find(
+        (assetType) => assetType.assetTypeId === asset.assetTypeId
+      )?.assetTypeCode;
+      this.currentState = true;
+    },
+    //Đóng bản thêm dữ liệu
     closeDialog() {
       this.currentState = false;
     },
+
+    ///Định dạng tiền
+    //CreateBy : DDCONG(25/03/2021)
+    formatCurrency(number) {
+      return number?.toLocaleString("de-DE", { minimumFractionDigits: 0 });
+    },
+
+    // Định dạng ngày tháng
+    // CreatedBy: DDCong(25/03/2021)
+    formatDate(dateString, formater = "DD/MM/YYYY") {
+      if (dateString != undefined) return moment(dateString).format(formater);
+    },
+    // convert Id loại tài sản => tên tài sản
+    // CreatedBy: DDCong(25/03/2021)
+    getAssetTypeName(assetTypeId) {
+      return this.assetTypes.find(
+        (assetType) => assetType.assetTypeId === assetTypeId
+      )?.assetTypeName;
+    },
+
+    //Convert Id phòng ban sang tên phòng ban
+    // CreatedBy: DDCong(25/03/2021)
+    getDepartmentName(departmentId) {
+      return this.departments.find(
+        (department) => department.departmentID === departmentId
+      )?.departmentName;
+    },
+
+    //Hiển thị chức năng cho từng dòng dữ liệu
+    showOperation() {
+      return (this.operation = true);
+    },
+    offOperation() {
+      this.operation = true;
+    },
+  },
+
+  ///Lấy dữ liệu từ database
+  ///CreatBy: DDCong(25-03-2021)
+  async created() {
+    try {
+      const responseAsset = await axios.get(this.BASE_URL + "/api/v1/assets");
+      this.assets = responseAsset.data;
+
+      const responseAssetType = await axios.get(
+        this.BASE_URL + "/api/v1/assetTypes"
+      );
+      this.assetTypes = responseAssetType.data;
+
+      const responseDepartment = await axios.get(
+        this.BASE_URL + "/api/v1/departments"
+      );
+      this.departments = responseDepartment.data;
+      console.log(this.departments);
+    } catch (error) {
+      console.log(error);
+    }
   },
 };
 </script>

@@ -28,14 +28,14 @@ src: url("../../assets/font/GoogleSans-Bold.otf");
 }
 
 .body-right{
-  width: calc(100% - 262px) ;
+  width: calc(100% - 230px) ;
   height: 100vh;
   
 }
 
 .body-right .content{
   width: 100%;
-  height:calc(100% - 92px );
+  height:calc(100% - 60px );
   padding: 16px;
 }
 

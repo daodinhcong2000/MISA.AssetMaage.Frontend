@@ -8,59 +8,62 @@
       </div>
       <div class="content-dialog">
         <div class="content-dialog-left">
-          <div>
+          <div class="input-item">
             <label>Mã tài sản (*)</label>
-            <select name="" id="">
-              <option value="">TS00004</option>
+            <select name="" id="" v-model="asset.assetCode">
+              <option>{{ asset.assetCode }}</option>
             </select>
+            <div class="icon-arrow"></div>
           </div>
-          <div>
+          <div class="input-item">
             <label>Mã phòng ban</label>
-            <select name="" id="">
-              <option value=""></option>
+            <select name="" id="" v-model="asset.departmentCode">
+              <option> {{asset.departmentCode}}</option>
             </select>
+            <div class="icon-arrow"></div>
           </div>
-          <div>
+          <div class="input-item">
             <label>Mã loại tài sản</label>
-            <select name="" id="">
-              <option value=""></option>
+            <select name="" id="" v-model="asset.assetTypeCode">
+              <option> {{asset.assetTypeCode}} </option>
             </select>
+            <div class="icon-arrow"></div>
           </div>
-          <div>
+          <div class="input-item">
             <label>Ngày ghi tăng</label>
-            <input type="date" name="" id="" />
+            <input type="date" name="" id="" v-model="asset.increaseDate" />
           </div>
-          <div>
+          <div class="input-item">
             <label>Nguyên giá</label>
-            <input type="text" />
+            <input type="text" v-model="asset.originalPrice"/>
           </div>
         </div>
         <div class="content-dialog-right">
-          <div>
+          <div class="input-item">
             <label>Tên tài sản</label>
-            <input type="text" id="input-defalut" />
+            <input type="text" id="input-defalut" v-model="asset.assetName" />
           </div>
-          <div>
+          <div class="input-item">
             <label>Tên phòng ban</label>
-            <input type="text" name="" id="input-defalut" />
+            <input type="text" name="" id="input-defalut" v-model="asset.departmentName"/>
           </div>
-          <div>
+          <div class="input-item">
             <label>Tên loại tài sản</label>
-            <input type="text" id="input-defalut" />
+            <input type="text" id="input-defalut" v-model="asset.assetTypeName" />
           </div>
           <div class="UseTime">
-            <div>
+            <div class="input-item">
               <label>Thời gian sử dụng (năm)</label>
-              <input type="text" name="" id="" />
+              <input type="text" name="" id="" v-model="asset.useTime" />
             </div>
-            <div>
+            <div class="input-item">
               <label>Tỷ lệ hao mòn (%)</label>
-              <input type="text" name="" id="" />
+              <input type="text" name="" id="" v-model="asset.wearRate"/>
             </div>
           </div>
-          <div class="UsePrice">
+          <div class="UsePrice input-item">
             <label>Giá trị hao mòn năm</label>
-            <input type="text" />
+            <input type="text" v-model="asset.wearValue"/>
           </div>
         </div>
       </div>
@@ -80,7 +83,7 @@
 <script>
 export default {
   name: "AssetDetail",
-  props: {},
+  props: ["asset"],
   methods: {
     CloseDialog() {
       this.$emit("closeDialog");

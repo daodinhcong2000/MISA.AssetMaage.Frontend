@@ -17,16 +17,16 @@
 <script>
 import TheMenu from "./components/TheMenu.vue";
 import TheHead from "./components/TheHead.vue";
-import Asset from "./components/pages/Asset/Asset"
+import Asset from "./components/pages/Asset/Asset";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-     TheMenu,
-      TheHead,
-      Asset,
-  }
-}
+    TheMenu,
+    TheHead,
+    Asset,
+  },
+};
 </script>
 
 <style lang="css">

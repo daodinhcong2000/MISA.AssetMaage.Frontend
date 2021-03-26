@@ -2,16 +2,20 @@ table {
     border-collapse: collapse;
     width: 100%;
     position: relative;
+
   }
   
 th, td {
 padding: 8px;
 text-align: left;
 border-bottom: 1px solid #ddd;
+/* max-width: 100px; */
+
 }
 td{
   border: 1px solid #ddd;
   text-align: center;
+ 
 }
 th{
   position: sticky;
@@ -22,4 +26,26 @@ tbody > tr:hover{
     cursor: pointer;
     background-color: #cccc
 
+}
+
+.icon-group{
+  display: flex;
+  justify-items: center;
+  
+}
+.icon-group > .icon{
+  height: 15px;
+  width: 15px;
+  background-size: contain;
+  margin: 5px;
+}
+
+.icon-edit{
+  background-image: url("../../../src/assets/Icon/trash.svg");
+}
+.icon-delete{
+  background-image: url("../../../src/assets/Icon/trash.svg");
+}
+.icon-history{
+  background-image: url("../../../src/assets/Icon/trash.svg");
 }

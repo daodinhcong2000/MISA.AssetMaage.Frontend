@@ -1,7 +1,7 @@
 
     .body-right .header{
         width: 100%;
-        height: 27px;
+        height: 60px;
         border-bottom: 1px solid #bbbb;
         display: flex;
         align-items: center;
@@ -23,6 +23,8 @@
          }
          #text-header{
              font-size: 18px;
+             padding: 16px 0px;
+             font-family: 'GoogleSans-Medium';
          }
                 
     /* Định nghĩa css cho phần bên phải */
