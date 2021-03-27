@@ -2,12 +2,18 @@
   <div class="content">
     <div class="filter-bar">
       <div class="filter-left">
-        <input type="text" placeholder="Tìm kiếm" class="input-search" />
+        <input
+          type="text"
+          placeholder="Tìm kiếm"
+          class="input-search"
+          v-model="searchKeyword"
+          @keyup.enter="search"
+        />
         <div class="icon-search"></div>
       </div>
       <div class="filter-right">
         <button @click="AddAsset()">Thêm</button>
-        <button class="m-btn-refresh"></button>
+        <button class="m-btn-refresh" @click="refreshData()"></button>
         <button class="m-btn-delete"></button>
       </div>
     </div>
@@ -37,6 +43,7 @@
             @mouseover="showOperation()"
             @mouseout="offOperation()"
             :key="index"
+             multiple
           >
             <td style="width: 3%">{{ index + 1 }}</td>
             <td style="width: 10%">{{ asset.assetCode }}</td>
@@ -52,10 +59,13 @@
             </td>
             <td style="width: 10%" class="asset-operation">
               <div class="icon-group" v-show="operation">
-                <div class="icon " @click="showDetail(asset)">
+                <div class="icon" @click="showDetail(asset)">
                   <i class="icon far fa-edit"></i>
                 </div>
-                <div class="icon icon-delete" @click="deleteAsset(asset)"></div>
+                <div
+                  class="icon icon-delete"
+                  @click="deleteAsset(asset)"
+                ></div>
                 <div class="icon icon-history"></div>
               </div>
             </td>
@@ -65,8 +75,8 @@
     </div>
 
     <div class="footer-content">
-      <div>Tổng số tài sản: 1.015</div>
-      <div>Tổng ngyên giá: 1.541.857.000</div>
+      <div>Tổng số tài sản: {{ this.assets.length }}</div>
+      <div>Tổng ngyên giá: {{ totalPrice() }}</div>
     </div>
     <AssetDetail
       v-show="currentState"
@@ -99,6 +109,7 @@ export default {
       departments: [],
       operation: true,
       asset: {},
+      searchKeyword: "",
     };
   },
   methods: {
@@ -116,7 +127,7 @@ export default {
       this.asset.assetTypeName = this.assetTypes.find(
         (assetType) => assetType.assetTypeId === asset.assetTypeId
       )?.assetTypeName;
-       this.asset.departmentCode = this.departments.find(
+      this.asset.departmentCode = this.departments.find(
         (department) => department.departmentId === asset.departmentId
       )?.departmentCode;
       console.log(this.asset.departmentCode);
@@ -129,13 +140,6 @@ export default {
     closeDialog() {
       this.currentState = false;
     },
-
-    //Xóa 1 bản ghi
-    deleteAsset(asset){
-     alert(asset.data);
-     console.log(asset);
-    },
-
     ///Định dạng tiền
     //CreateBy : DDCONG(25/03/2021)
     formatCurrency(number) {
@@ -167,14 +171,122 @@ export default {
     showOperation() {
       return (this.operation = true);
     },
+
+    //Tính tổng nguyên giá
+    totalPrice() {
+      var sum;
+      for (var asset in this.assets) {
+        sum = asset.originalPrice;
+      }
+      return sum;
+    },
+
+    //Tait lại dữ liệu
+     refreshData(){
+        this.refreshAsset();
+        this.refreshAssetType();
+        this.refreshDepartment();
+    },
+        // Tải lại tài sản
+    // CreatedBy: DDCong(26/3)
+    async refreshAsset() {
+      try {
+        this.assets = [];
+        const responseAsset = await axios.get(this.BASE_URL + "/api/v1/assets");
+        console.log(responseAsset);
+        this.assets = responseAsset.data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
+    // Tải lại loại tài sản
+    // CreatedBy: DDCong(26/3)
+    async refreshAssetType() {
+      try {
+        const responseAssetType = await axios.get(
+          this.BASE_URL + "/api/v1/asset-types"
+        );
+        console.log(responseAssetType.data);
+        this.assetTypes = responseAssetType.data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
+    // Tải lại phòng ban
+    // CreatedBy: DDCONG
+    async refreshDepartment() {
+      try {
+        const responseDepartment = await axios.get(
+          this.BASE_URL + "/api/v1/departments"
+        );
+        console.log(responseDepartment);
+        this.departments = responseDepartment.data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
+    //Tìm kiếm dữ liệu 
+    async search(){
+      try {
+        if(this.searchKeyword == ""){
+            return this.refreshData();
+        }
+        else{
+          const response = await axios.get(this.BASE_URL + "/api/v1/assets/search", {
+          params: {
+            contentFilter: this.searchKeyword,
+          },
+        })
+          console.log(response);
+          this.assets = response.data;
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
     offOperation() {
       this.operation = true;
     },
 
-    changeAsset(){
+    async changeAsset() {
+      if (this.asset.assetId == undefined) {
+        console.log(this.asset);
+        const response = await axios.post(
+          this.BASE_URL + "/api/v1/assets",
+          this.asset
+        );
+        this.assets.push(this.asset);
+        console.log(response);
+        this.currentState = false;
+        return response;
+      } else {
+        const response = axios.put(
+          this.BASE_URL + "/api/v1/assets",
+          this.asset
+        );
+        this.currentState = false;
+        return response;
+      }
+    },
+
+        //Xóa 1 bản ghi
+  async deleteAsset(asset) {
+      console.log(asset.assetId);
       console.log(this.asset);
-    }
+      const response = await axios.delete(this.BASE_URL + "/api/v1/assets", {
+        params: {
+          ids: asset.assetId,
+        },
+      });
+      this.refreshData();
+      return response;
+    },
   },
+
+ 
 
   ///Lấy dữ liệu từ database
   ///CreatBy: DDCong(25-03-2021)
@@ -192,7 +304,8 @@ export default {
         this.BASE_URL + "/api/v1/departments"
       );
       this.departments = responseDepartment.data;
-      console.log(this.departments);
+
+      console.log(this.assets.length);
     } catch (error) {
       console.log(error);
     }
