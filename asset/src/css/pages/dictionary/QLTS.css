@@ -2,6 +2,7 @@
     height: calc(100% - 100px);
     overflow: scroll;
     white-space: nowrap;
+    overflow-x: hidden;
     
 }
 

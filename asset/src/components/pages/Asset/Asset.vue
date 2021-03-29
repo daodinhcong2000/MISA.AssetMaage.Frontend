@@ -29,14 +29,14 @@
           <tr class="el-table__row">
             <th style="width: 3%">STT</th>
             <th style="width: 10%">MÃ TÀI SẢN</th>
-            <th style="width: 25%">TÊN TÀI SẢN</th>
+            <th style="width: 27%">TÊN TÀI SẢN</th>
             <th style="width: 17%">LOẠI TÀI SẢN</th>
-            <th style="width: 20%">PHÒNG BAN</th>
+            <th style="width: 23%">PHÒNG BAN</th>
             <th class="cell-number" style="width: 10%">NGUYÊN GIÁ</th>
             <th style="width: 5% ; text-align: center">CHỨC NĂNG</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="show-data">
           <div v-if="!this.assets.length" class="no-data">
             Không có dữ liệu hiển thị !
           </div>
@@ -48,11 +48,11 @@
           >
             <td style="width: 3%; text-align: center !important;">{{ index + 1 }}</td>
             <td style="width: 10%">{{ asset.assetCode }}</td>
-            <td style="width: 25%">{{ asset.assetName }}</td>
+            <td style="width: 27%">{{ asset.assetName }}</td>
             <td style="width: 17%">
               {{ getAssetTypeName(asset.assetTypeId) }}
             </td>
-            <td style="width: 20%">
+            <td style="width: 23%">
               {{ getDepartmentName(asset.departmentId) }}
             </td>
             <td
@@ -66,7 +66,7 @@
                 <div class="icon icon-edit" @click="showDetail(asset)"></div>
                 <div
                   class="icon icon-delete"
-                  @click="confirmDelete(asset)"
+                  @click="confirmDelete(asset,index)"
                 ></div>
                 <div class="icon icon-history"></div>
               </div>
@@ -95,7 +95,9 @@
       @aceptDelete="aceptDelete()"
       @cancleDelete="cancleDelete()"
     />
-    <!-- <contextMenu v-if="contextState"/> -->
+     <MISAContextMenu 
+    />
+
   </div>
 </template>
 
@@ -103,15 +105,16 @@
 <script>
 import AssetDetail from "./AssetDetail";
 import Alert from "../../common/Alert";
-// import contextMenu from "../../common/contextMenu";
 import axios from "axios";
-import moment from "moment";
+// import moment from "moment";
+import MISAContextMenu from "../../common/contextMenu";
+import contextMenu from "../../../js/comon/contextMenu";
 export default {
   name: "Asset",
   components: {
     AssetDetail,
     Alert,
-    // contextMenu,
+    MISAContextMenu,
   },
   props: {},
   data: function () {
@@ -130,21 +133,15 @@ export default {
         errorCode: "",
         errorName: "",
       },
-      items:["a","b","c"],
+      index: 0,
     };
   },
   methods: {
-    handleClick(event, item) {
-      this.$refs.vueSimpleContextMenu.showMenu(event, item);
-    },
-
-    optionClicked(event) {
-      window.alert(JSON.stringify(event));
-    },
     //CreateBy: DDCong(26/03/2021)
-    confirmDelete(asset) {
+    confirmDelete(asset,index) {
       this.alertState = true;
       this.asset = asset;
+      this.index = index;
     },
     //CreateBy: DDCong(26/03/2021)
     cancleDelete() {
@@ -164,6 +161,7 @@ export default {
     //CreateBy: DDCong(26/03/2021)
     showDetail(asset) {
       this.asset = asset;
+    
       this.asset.departmentName = this.departments.find(
         (department) => department.departmentId === asset.departmentId
       )?.departmentName;
@@ -180,10 +178,10 @@ export default {
       )?.assetTypeCode;
       //  this.$root.getDepartmentName();
       this.currentState = true;
+       this.asset = JSON.parse(JSON.stringify(asset))
     },
     //Đóng bản thêm dữ liệu
     closeDialog() {
-      this.refreshData();
       this.errors.errorCode = "";
       this.errors.errorName = "";
       this.currentState = false;
@@ -192,12 +190,6 @@ export default {
     //CreateBy : DDCONG(25/03/2021)
     formatCurrency(number) {
       return number?.toLocaleString("de-DE", { minimumFractionDigits: 0 });
-    },
-
-    // Định dạng ngày tháng
-    // CreatedBy: DDCong(25/03/2021)
-    formatDate(dateString, formater = "DD/MM/YYYY") {
-      if (dateString != undefined) return moment(dateString).format(formater);
     },
     // convert Id loại tài sản => tên tài sản
     // CreatedBy: DDCong(25/03/2021)
@@ -312,11 +304,13 @@ export default {
         }
         return response;
       } else {
+        console.log(this.asset)
         const response = axios.put(
           this.BASE_URL + "/api/v1/assets",
           this.asset
         );
         this.currentState = false;
+        console.log(response);
         return response;
       }
     },
@@ -329,9 +323,14 @@ export default {
           ids: asset.assetId,
         },
       });
-      this.refreshData();
+      // this.refreshData();
+      this.assets.splice(this.index, 1);
       return response;
     },
+  },
+  mounted(){
+    contextMenu.showContextMenuWithTable();
+    contextMenu.hideContextMenu();
   },
 
   ///Lấy dữ liệu từ database

@@ -25,17 +25,19 @@ th{
 }
 tbody > tr:hover{
     cursor: pointer;
-    background-color: #cccc
+    background-color: #cccc;
+    position: relative;
 
 }
 
  tr:hover .icon-group{
-  display: flex;
+  visibility: visible;
 }
 
 .icon-group{
-  display: none;
+  display: flex;
   justify-items: center;
+  visibility: hidden;
   
 }
 .icon-group > .icon{
@@ -57,9 +59,10 @@ tbody > tr:hover{
 .no-data {
   position: absolute;
   top: 400%;
-  left: 30%;
+  left: 35%;
   font-size: 30px;
   font-family: 'GoogleSans-Medium';
+  color: #bbbbbb;
 }
 
 .cell-number{

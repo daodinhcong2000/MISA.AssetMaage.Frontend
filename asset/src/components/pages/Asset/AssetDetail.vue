@@ -119,6 +119,7 @@ export default {
     };
   },
   methods: {
+    //Kiểm tra dữ liệu nhập vào
     checkValidate() {
       if(!this.asset.assetCode) this.errors.errorCode = "Yêu cầu nhập mã code!";
       else this.errors.errorCode = "";
@@ -150,7 +151,7 @@ export default {
     postAsset() {
       this.checkValidate();
       this.asset.originalPrice = parseInt(this.asset.originalPrice);
-      console.log(typeof(this.asset.originalPrice));
+      console.log(this.asset);
       this.$emit("changeAsset", this.asset);
     },
     getDepartmentCode() {

@@ -1,23 +1,60 @@
 <template>
-<div id="demo" v-on="openMenu">
-  
-</div>
+    <div class="context-menu" id="contextMenu">
+        <div class="context-menu-title" >Thêm</div>
+        <div class="context-menu-title">Sửa</div>
+        <div class="context-menu-title" >Xóa</div>
+        <div class="context-menu-title">Nhân bản</div>
+    </div>
 </template>
-
 
 <script>
 export default {
-  name: "contextMenu",
-   data: {
-        viewMenu: false,
-        top: '0px',
-        left: '0px'
+    name: "MISAContextMenu",
+    props: ['contextUpdate','idOnDelete'],
+    data(){
+        return{
+        }
     },
-
-    methods: {}
-};
+    methods:{
+        /**
+         * Mở Dialog thêm tài sản
+         * CreatedBy: DDCong
+         */
+        // AddAsset(){
+        //     this.$emit("addAsset",false);
+        // },
+        // /**
+        //  * Mở Dialog để sửa lại tài sản
+        //  * CreatedBy:
+        //  */
+        // UpdateAsset(){
+        //     this.$emit("updateAsset",this.contextUpdate);
+        // },
+        // /**
+        //  * Xóa tài sản
+        //  * CreatedBy:
+        //  */
+        // DeleteAsset(){
+        //     this.$emit("deleteAsset",false, this.idOnDelete);
+        // }
+    }
+}
 </script>
-
-<style scoped>
- @import url("../../css/common/context.css"); 
+<style lang="css" scoped>
+  .context-menu{
+    position: absolute;
+    height: 80px;
+    width: 100px;
+    background-color: #ffffff;
+    border: 1px solid #bbbbbb;
+  }
+  .context-menu-title{
+        text-align: center;
+  }
+  .context-menu >div:hover{
+      cursor: pointer;
+      background-color: #bbbbbb;
+      align-items: center;
+      
+  }
 </style>
