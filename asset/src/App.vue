@@ -31,7 +31,6 @@ export default {
 
 <style lang="css">
 @import "./css/common/common.css";
-@import "./css/common/common.css";
 #app {
   display: flex;
   margin: 0px;

@@ -30,41 +30,43 @@
             <th style="width: 3%">STT</th>
             <th style="width: 10%">MÃ TÀI SẢN</th>
             <th style="width: 25%">TÊN TÀI SẢN</th>
-            <th style="width: 12%">LOẠI TÀI SẢN</th>
+            <th style="width: 17%">LOẠI TÀI SẢN</th>
             <th style="width: 20%">PHÒNG BAN</th>
             <th class="cell-number" style="width: 10%">NGUYÊN GIÁ</th>
-            <th style="width: 10%">CHỨC NĂNG</th>
+            <th style="width: 5% ; text-align: center">CHỨC NĂNG</th>
           </tr>
         </thead>
         <tbody>
+          <div v-if="!this.assets.length" class="no-data">
+            Không có dữ liệu hiển thị !
+          </div>
           <tr
             class="el-table__row"
             v-for="(asset, index) in assets"
-            @mouseover="showOperation()"
-            @mouseout="offOperation()"
             :key="index"
-             multiple
+            multiple
           >
-            <td style="width: 3%">{{ index + 1 }}</td>
+            <td style="width: 3%; text-align: center !important;">{{ index + 1 }}</td>
             <td style="width: 10%">{{ asset.assetCode }}</td>
             <td style="width: 25%">{{ asset.assetName }}</td>
-            <td style="width: 12%">
+            <td style="width: 17%">
               {{ getAssetTypeName(asset.assetTypeId) }}
             </td>
             <td style="width: 20%">
               {{ getDepartmentName(asset.departmentId) }}
             </td>
-            <td style="width: 10%" class="cell-number">
+            <td
+              style="width: 10%;"
+              class="cell-number"
+            >
               {{ formatCurrency(asset.originalPrice) }}
             </td>
-            <td style="width: 10%" class="asset-operation">
-              <div class="icon-group" v-show="operation">
-                <div class="icon" @click="showDetail(asset)">
-                  <i class="icon far fa-edit"></i>
-                </div>
+            <td style="width: 5% ; align-item:center ;" class="asset-operation">
+              <div class="icon-group" v-show="operation" style=" align-item:center ;">
+                <div class="icon icon-edit" @click="showDetail(asset)"></div>
                 <div
                   class="icon icon-delete"
-                  @click="deleteAsset(asset)"
+                  @click="confirmDelete(asset)"
                 ></div>
                 <div class="icon icon-history"></div>
               </div>
@@ -84,20 +86,32 @@
       v-bind:asset="asset"
       v-bind:departments="departments"
       v-bind:assetTypes="assetTypes"
+      v-bind:errors="errors"
       @changeAsset="changeAsset()"
     />
+
+    <Alert
+      v-if="alertState"
+      @aceptDelete="aceptDelete()"
+      @cancleDelete="cancleDelete()"
+    />
+    <!-- <contextMenu v-if="contextState"/> -->
   </div>
 </template>
 
 
 <script>
 import AssetDetail from "./AssetDetail";
+import Alert from "../../common/Alert";
+// import contextMenu from "../../common/contextMenu";
 import axios from "axios";
 import moment from "moment";
 export default {
   name: "Asset",
   components: {
     AssetDetail,
+    Alert,
+    // contextMenu,
   },
   props: {},
   data: function () {
@@ -110,34 +124,68 @@ export default {
       operation: true,
       asset: {},
       searchKeyword: "",
+      alertState: false,
+      contextState: true,
+      errors: {
+        errorCode: "",
+        errorName: "",
+      },
+      items:["a","b","c"],
     };
   },
   methods: {
+    handleClick(event, item) {
+      this.$refs.vueSimpleContextMenu.showMenu(event, item);
+    },
+
+    optionClicked(event) {
+      window.alert(JSON.stringify(event));
+    },
+    //CreateBy: DDCong(26/03/2021)
+    confirmDelete(asset) {
+      this.alertState = true;
+      this.asset = asset;
+    },
+    //CreateBy: DDCong(26/03/2021)
+    cancleDelete() {
+      this.alertState = false;
+    },
+    //CreateBy: DDCong(26/03/2021)
+    aceptDelete() {
+      this.deleteAsset(this.asset);
+    },
     //thêm dữ liệu tài sản
+    //CreateBy: DDCong(26/03/2021)
     AddAsset() {
       this.currentState = true;
       this.asset = {};
     },
     //Xem dữ liệu tài sản
+    //CreateBy: DDCong(26/03/2021)
     showDetail(asset) {
       this.asset = asset;
       this.asset.departmentName = this.departments.find(
-        (department) => department.departmentID === asset.departmentId
+        (department) => department.departmentId === asset.departmentId
       )?.departmentName;
       this.asset.assetTypeName = this.assetTypes.find(
         (assetType) => assetType.assetTypeId === asset.assetTypeId
       )?.assetTypeName;
+      // this.$root.getAssetTypeName();
       this.asset.departmentCode = this.departments.find(
         (department) => department.departmentId === asset.departmentId
       )?.departmentCode;
-      console.log(this.asset.departmentCode);
+      // console.log(this.departments);
       this.asset.assetTypeCode = this.assetTypes.find(
         (assetType) => assetType.assetTypeId === asset.assetTypeId
       )?.assetTypeCode;
+      //  this.$root.getDepartmentName();
       this.currentState = true;
     },
     //Đóng bản thêm dữ liệu
     closeDialog() {
+      this.refreshData();
+      this.errors.errorCode = "";
+      this.errors.errorName = "";
       this.currentState = false;
     },
     ///Định dạng tiền
@@ -163,7 +211,7 @@ export default {
     // CreatedBy: DDCong(25/03/2021)
     getDepartmentName(departmentId) {
       return this.departments.find(
-        (department) => department.departmentID === departmentId
+        (department) => department.departmentId === departmentId
       )?.departmentName;
     },
 
@@ -174,27 +222,28 @@ export default {
 
     //Tính tổng nguyên giá
     totalPrice() {
-      var sum;
-      for (var asset in this.assets) {
-        sum = asset.originalPrice;
-      }
-      return sum;
+      var sum = 0;
+
+      this.assets.forEach((asset) => {
+        sum = sum + asset.originalPrice;
+      });
+      return this.formatCurrency(sum);
     },
 
     //Tait lại dữ liệu
-     refreshData(){
-        this.refreshAsset();
-        this.refreshAssetType();
-        this.refreshDepartment();
+    refreshData() {
+      this.refreshAsset();
+      this.refreshAssetType();
+      this.refreshDepartment();
     },
-        // Tải lại tài sản
+    // Tải lại tài sản
     // CreatedBy: DDCong(26/3)
     async refreshAsset() {
       try {
         this.assets = [];
         const responseAsset = await axios.get(this.BASE_URL + "/api/v1/assets");
-        console.log(responseAsset);
         this.assets = responseAsset.data;
+        console.log(this.assets.length);
       } catch (error) {
         console.log(error);
       }
@@ -205,9 +254,8 @@ export default {
     async refreshAssetType() {
       try {
         const responseAssetType = await axios.get(
-          this.BASE_URL + "/api/v1/asset-types"
+          this.BASE_URL + "/api/v1/assetTypes"
         );
-        console.log(responseAssetType.data);
         this.assetTypes = responseAssetType.data;
       } catch (error) {
         console.log(error);
@@ -221,46 +269,47 @@ export default {
         const responseDepartment = await axios.get(
           this.BASE_URL + "/api/v1/departments"
         );
-        console.log(responseDepartment);
         this.departments = responseDepartment.data;
       } catch (error) {
         console.log(error);
       }
     },
 
-    //Tìm kiếm dữ liệu 
-    async search(){
+    //Tìm kiếm dữ liệu
+    async search() {
       try {
-        if(this.searchKeyword == ""){
-            return this.refreshData();
-        }
-        else{
-          const response = await axios.get(this.BASE_URL + "/api/v1/assets/search", {
-          params: {
-            contentFilter: this.searchKeyword,
-          },
-        })
-          console.log(response);
+        if (this.searchKeyword == "") {
+          return this.refreshData();
+        } else {
+          const response = await axios.get(
+            this.BASE_URL + "/api/v1/assets/search",
+            {
+              params: {
+                contentFilter: this.searchKeyword,
+              },
+            }
+          );
           this.assets = response.data;
         }
       } catch (error) {
         console.log(error);
       }
     },
-    offOperation() {
-      this.operation = true;
-    },
 
+    //Thêm hoặc sửa tài sản
     async changeAsset() {
       if (this.asset.assetId == undefined) {
-        console.log(this.asset);
         const response = await axios.post(
           this.BASE_URL + "/api/v1/assets",
           this.asset
         );
-        this.assets.push(this.asset);
-        console.log(response);
-        this.currentState = false;
+        if (response.data.misaCode == 900) {
+          this.errors.errorCode = response.data.messenger;
+        } else {
+          this.assets.push(this.asset);
+          console.log(this.errors.errorCode);
+          this.currentState = false;
+        }
         return response;
       } else {
         const response = axios.put(
@@ -272,10 +321,9 @@ export default {
       }
     },
 
-        //Xóa 1 bản ghi
-  async deleteAsset(asset) {
-      console.log(asset.assetId);
-      console.log(this.asset);
+    //Xóa 1 bản ghi
+    async deleteAsset(asset) {
+      this.alertState = false;
       const response = await axios.delete(this.BASE_URL + "/api/v1/assets", {
         params: {
           ids: asset.assetId,
@@ -285,8 +333,6 @@ export default {
       return response;
     },
   },
-
- 
 
   ///Lấy dữ liệu từ database
   ///CreatBy: DDCong(25-03-2021)
@@ -304,8 +350,6 @@ export default {
         this.BASE_URL + "/api/v1/departments"
       );
       this.departments = responseDepartment.data;
-
-      console.log(this.assets.length);
     } catch (error) {
       console.log(error);
     }

@@ -14,7 +14,6 @@ max-width: 99px;
 }
 td{
   border: 1px solid #ddd;
-  text-align: left;
   overflow: hidden;
   text-overflow: ellipsis; 
  
@@ -30,8 +29,12 @@ tbody > tr:hover{
 
 }
 
-.icon-group{
+ tr:hover .icon-group{
   display: flex;
+}
+
+.icon-group{
+  display: none;
   justify-items: center;
   
 }
@@ -43,13 +46,24 @@ tbody > tr:hover{
 }
 
 .icon-edit{
-  background-image: url("../../../src/assets/Icon/trash.svg");
+  background-image: url("../../../src/assets/Icon/icon-edit.svg");
 }
 .icon-delete{
-  background-image: url("../../../src/assets/Icon/trash.svg");
+  background-image: url("../../../src/assets/Icon/icon-trash.svg");
 }
 .icon-history{
-  background-image: url("../../../src/assets/Icon/trash.svg");
+  background-image: url("../../../src/assets/Icon/icon-history.svg");
+}
+.no-data {
+  position: absolute;
+  top: 400%;
+  left: 30%;
+  font-size: 30px;
+  font-family: 'GoogleSans-Medium';
+}
+
+.cell-number{
+  text-align: right !important;
 }
 
 

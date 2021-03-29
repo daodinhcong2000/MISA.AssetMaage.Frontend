@@ -27,6 +27,9 @@
              font-family: 'GoogleSans-Medium';
          }
                 
+         .header-left > p:first-child{
+             color: #00ABFE;
+         }
     /* Định nghĩa css cho phần bên phải */
         .body-right .header .header-right{
             display: flex;
@@ -50,7 +53,7 @@
         .year > p{
             margin: 0px;
             text-align: center;
-            padding: 5px 0px 0px 16px;
+            padding: 3px 0px 0px 16px;
         }
 
         .year .icon-updown{

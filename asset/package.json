@@ -13,8 +13,10 @@
     "@fortawesome/vue-fontawesome": "^2.0.2",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "jquery": "^3.6.0",
     "moment": "^2.29.1",
     "vue": "^2.6.11",
+    "vue-simple-context-menu": "^3.4.1",
     "vuetify": "^2.4.0"
   },
   "devDependencies": {

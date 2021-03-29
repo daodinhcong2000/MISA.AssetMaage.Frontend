@@ -1,0 +1,93 @@
+
+.alert{
+position: fixed;
+top : 0px;
+left: 0px;
+bottom: 0;
+right: 0;
+/* display: none; */
+
+}
+
+.model{
+position: fixed;
+top : 0px;
+left: 0px;
+bottom: 0;
+right: 0;
+background-color: #000;
+opacity: 0.5;
+}
+
+.alert-delete{
+    position: absolute;
+    height: 150px;
+    width: 450px;
+    left: calc(50% - 130px);
+    top: calc(50% - 140px);
+    background-color: #fff;
+    z-index: 1;
+    border-radius: 4px;
+    
+}
+.alert-header{
+    height: 25%;
+    width: 100%;
+    padding:10px 16px ;
+    display: flex;
+    position: relative;
+ 
+}
+    .icon-cancle{
+        height: 15px;
+        width: 15px;
+        background-image: url("../../assets/Icon/cancel.svg");
+        position: absolute;
+        right: 16px;
+        top:10px;
+        background-size:cover;
+        cursor: pointer;
+    }
+.alert-content{
+    height: 50%;
+    width: 100%;
+    background-color: #ffffff;
+    padding:0px 16px ;
+    align-items: center;
+    position: relative;
+}
+.alert-content > div{
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    left: 60px;
+}
+.alert-footer{
+    height: 25%;
+    width: 100%;
+    background-color: #bbbb;
+    display: flex;
+    justify-items:flex-end;
+    padding:4px 16px ;
+    position: relative;;
+}
+
+.alert-footer >button{
+    height: 80%;
+    padding: 0px 16px;
+}
+        .alert-footer > .btn-cancel{
+        position: absolute;
+        left: 16px;
+        background-color: #ffffff;
+        border:1px solid #CCCCCC;
+        border-radius: 4px;
+    }
+    .alert-footer > .btn-accept{
+        position: absolute;
+        right: 16px;
+        background-color: #f00000;
+        border:1px solid #CCCCCC;
+        border-radius: 4px;
+        
+    }

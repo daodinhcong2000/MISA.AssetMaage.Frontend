@@ -2,7 +2,7 @@
 <div>
   <div class="logo-box">
     <div class="logo-1"></div>
-    <h1>QLTS.VN</h1>
+    <h1 class="menu-text">QLTS.VN</h1>
     <div class="icon-1"></div>
   </div>
   <div class="menu">

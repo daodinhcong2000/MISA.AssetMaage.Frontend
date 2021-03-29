@@ -69,7 +69,12 @@
             .input-item{
                 position: relative;
             }
-
+            .input-item > .validate-error{
+                color: red;
+                position: absolute;
+                top: 5px;
+                right: 0;
+            }
             .input-item  > select {
                 width: 100%;
                 height: 32px;
@@ -77,6 +82,7 @@
                 border-radius: 5px;
                 margin-bottom: 16px;
                 margin-top: 4px;
+                padding-left: 16px;
             }
 
             .input-item > input{

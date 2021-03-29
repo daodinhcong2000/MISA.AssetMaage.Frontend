@@ -45,6 +45,7 @@ font-size: 14px;
 .body-left .menu .menu-item:hover{
 cursor: pointer;
 background-color: #bbbb;
+border-left: 5px solid #00ABFE;
 }
 
 .body-left .menu .menu-item .menu-icon{
@@ -56,6 +57,10 @@ margin-left: 30px;
 margin-right: 10px;
 background-repeat: no-repeat;
 }
+
+/* .menu-item .menu-text{
+    display: none;
+} */
 
 .body-left .menu .nav-item-dashboard {
 background-image: url(../../assets/Icon/computer-line.svg);
