@@ -12,7 +12,7 @@
         <div class="content-dialog-left">
           <div class="input-item">
             <label>Mã tài sản (*)</label>
-            <input type="text" v-model="asset.assetCode" @blur="checkValidate()" @input="resetValidate(errors.errorCode)"/>
+            <input type="text" v-model="asset.assetCode" @blur="checkValidateCode()" @input="resetValidateCode()"/>
             <p v-if="errors.errorCode" class="validate-error">{{errors.errorCode}}</p>
           </div>
           <div class="input-item">
@@ -57,13 +57,14 @@
               type="text"
               id="money-display"
               v-model="asset.originalPrice"
+              @input="handlePrice"
             />
           </div>
         </div>
         <div class="content-dialog-right">
           <div class="input-item">
             <label>Tên tài sản</label>
-            <input type="text" id="" v-model="asset.assetName" @blur="checkValidate()" />
+            <input type="text" id="" v-model="asset.assetName" @blur="checkValidateName()" @input="resetValidateName()" />
             <p v-if="errors.errorName" class="validate-error" >{{errors.errorName}}</p>
           </div>
           <div class="input-item">
@@ -90,7 +91,7 @@
           </div>
           <div class="UsePrice input-item">
             <label>Giá trị hao mòn năm</label>
-            <input type="text" v-model="asset.wearValue" />
+            <input type="text" v-model="asset.wearValue" @input="handlePrice" />
           </div>
         </div>
       </div>
@@ -108,7 +109,7 @@
 
 
 <script>
-// import $ from "jquery";
+import $ from "jquery";
 export default {
   name: "AssetDetail",
   props: ["asset", "departments", "assetTypes","errors"],
@@ -120,17 +121,31 @@ export default {
   },
   methods: {
     //Kiểm tra dữ liệu nhập vào
-    checkValidate() {
+    //CreatedByDDCong(27/03/2021)
+    checkValidateCode() {
       if(!this.asset.assetCode) this.errors.errorCode = "Yêu cầu nhập mã code!";
       else this.errors.errorCode = "";
+    },
+
+    //Kiểm tra dữ liệu nhập vào
+    //CreatedByDDCong(27/03/2021)
+    checkValidateName() {
       if(!this.asset.assetName) this.errors.errorName = "Yêu cầu nhập tên!";
       else this.errors.errorName="";
     },
 
-    resetValidate(name){
-      if(name) name = "";
-      console.log(name);
+    //Bỏ thông báo lỗi mã code
+    //CreatedByDDCong(27/03/2021)
+    resetValidateCode(){
+      return this.errors.errorCode = "";
     },
+     //Bỏ thông báo lỗi tên
+    //CreatedByDDCong(27/03/2021)
+    resetValidateName(){
+      return this.errors.errorName = "";
+    },
+    //Lấy dữ liệu tên khi chon code 
+    //CreatedBy: DDCong(27/03/2021)
     mappingData() { 
       this.asset.assetTypeName = this.assetTypes.find(
         (assetType) => assetType.assetTypeCode === this.asset.assetTypeCode
@@ -145,19 +160,28 @@ export default {
         (department) => department.departmentCode === this.asset.departmentCode
       )?.departmentId;
     },
+    //Đóng form 
+    //CreatedBy: DDCong(27/03/2021)
     CloseDialog() {
       this.$emit("closeDialog");
     },
+    //Gửi lên thông báo thay đổi hoặc thêm mới tài sản
+    //CreatedBy: DDCong(27/03/2021)
     postAsset() {
-      this.checkValidate();
+      this.checkValidateCode();
       this.asset.originalPrice = parseInt(this.asset.originalPrice);
       console.log(this.asset);
       this.$emit("changeAsset", this.asset);
     },
-    getDepartmentCode() {
-      return this.departments.find(
-        (department) => department.departmentID === this.asset.departmentId
-      )?.departmentCode;
+    //Định dạng lại tiền khi nhập vào  
+    //DDCong(27/03/2021)
+    handlePrice(event){
+      $('#money-display').keyup(function () {
+        var money = $(this).val();
+        money = money.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        $(this).val(money);
+      });
+      this.asset.OriginalPrice = event.target.value;
     },
 
   },

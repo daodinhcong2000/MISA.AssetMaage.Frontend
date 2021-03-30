@@ -15,6 +15,7 @@
 } */
 
 button:hover{
-    background-color: #2FBE8E;
+    background-color: #bbbb;
     cursor: pointer;
+    border: none;
 }

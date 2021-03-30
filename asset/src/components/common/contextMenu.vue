@@ -1,6 +1,6 @@
 <template>
     <div class="context-menu" id="contextMenu">
-        <div class="context-menu-title" >Thêm</div>
+        <div class="context-menu-title" @click="AddAsset()" >Thêm</div>
         <div class="context-menu-title">Sửa</div>
         <div class="context-menu-title" >Xóa</div>
         <div class="context-menu-title">Nhân bản</div>
@@ -9,8 +9,8 @@
 
 <script>
 export default {
-    name: "MISAContextMenu",
-    props: ['contextUpdate','idOnDelete'],
+    name: "ContextMenu",
+    props: [],
     data(){
         return{
         }
@@ -20,23 +20,9 @@ export default {
          * Mở Dialog thêm tài sản
          * CreatedBy: DDCong
          */
-        // AddAsset(){
-        //     this.$emit("addAsset",false);
-        // },
-        // /**
-        //  * Mở Dialog để sửa lại tài sản
-        //  * CreatedBy:
-        //  */
-        // UpdateAsset(){
-        //     this.$emit("updateAsset",this.contextUpdate);
-        // },
-        // /**
-        //  * Xóa tài sản
-        //  * CreatedBy:
-        //  */
-        // DeleteAsset(){
-        //     this.$emit("deleteAsset",false, this.idOnDelete);
-        // }
+        AddAsset(){
+            this.$emit("addAsset");
+        },
     }
 }
 </script>
@@ -47,6 +33,7 @@ export default {
     width: 100px;
     background-color: #ffffff;
     border: 1px solid #bbbbbb;
+    display: none;
   }
   .context-menu-title{
         text-align: center;

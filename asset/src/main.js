@@ -5,6 +5,10 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import * as jqueryExports from "jquery";
+import FlashMessage from '@smartweb/vue-flash-message';
+Vue.use(FlashMessage);
+
+Vue.use(FlashMessage, {});
 
 window.$ = jqueryExports.default;
 

@@ -33,7 +33,7 @@
             <th style="width: 17%">LOẠI TÀI SẢN</th>
             <th style="width: 23%">PHÒNG BAN</th>
             <th class="cell-number" style="width: 10%">NGUYÊN GIÁ</th>
-            <th style="width: 5% ; text-align: center">CHỨC NĂNG</th>
+            <th style="width: 5%; text-align: center">CHỨC NĂNG</th>
           </tr>
         </thead>
         <tbody class="show-data">
@@ -46,7 +46,9 @@
             :key="index"
             multiple
           >
-            <td style="width: 3%; text-align: center !important;">{{ index + 1 }}</td>
+            <td style="width: 3%; text-align: center !important">
+              {{ index + 1 }}
+            </td>
             <td style="width: 10%">{{ asset.assetCode }}</td>
             <td style="width: 27%">{{ asset.assetName }}</td>
             <td style="width: 17%">
@@ -55,18 +57,19 @@
             <td style="width: 23%">
               {{ getDepartmentName(asset.departmentId) }}
             </td>
-            <td
-              style="width: 10%;"
-              class="cell-number"
-            >
+            <td style="width: 10%" class="cell-number">
               {{ formatCurrency(asset.originalPrice) }}
             </td>
-            <td style="width: 5% ; align-item:center ;" class="asset-operation">
-              <div class="icon-group" v-show="operation" style=" align-item:center ;">
+            <td style="width: 5%; align-item: center" class="asset-operation">
+              <div
+                class="icon-group"
+                v-show="operation"
+                style="align-item: center"
+              >
                 <div class="icon icon-edit" @click="showDetail(asset)"></div>
                 <div
                   class="icon icon-delete"
-                  @click="confirmDelete(asset,index)"
+                  @click="confirmDelete(asset, index)"
                 ></div>
                 <div class="icon icon-history"></div>
               </div>
@@ -95,9 +98,8 @@
       @aceptDelete="aceptDelete()"
       @cancleDelete="cancleDelete()"
     />
-     <MISAContextMenu 
-    />
-
+    <ContextMenu @addAsset="AddAsset()" />
+    <FlashMessage />
   </div>
 </template>
 
@@ -106,15 +108,16 @@
 import AssetDetail from "./AssetDetail";
 import Alert from "../../common/Alert";
 import axios from "axios";
-// import moment from "moment";
-import MISAContextMenu from "../../common/contextMenu";
+import ContextMenu from "../../common/ContextMenu";
 import contextMenu from "../../../js/comon/contextMenu";
+import FlashMessage from "@smartweb/vue-flash-message";
 export default {
   name: "Asset",
   components: {
     AssetDetail,
     Alert,
-    MISAContextMenu,
+    ContextMenu,
+    FlashMessage
   },
   props: {},
   data: function () {
@@ -128,7 +131,6 @@ export default {
       asset: {},
       searchKeyword: "",
       alertState: false,
-      contextState: true,
       errors: {
         errorCode: "",
         errorName: "",
@@ -138,7 +140,7 @@ export default {
   },
   methods: {
     //CreateBy: DDCong(26/03/2021)
-    confirmDelete(asset,index) {
+    confirmDelete(asset, index) {
       this.alertState = true;
       this.asset = asset;
       this.index = index;
@@ -154,6 +156,7 @@ export default {
     //thêm dữ liệu tài sản
     //CreateBy: DDCong(26/03/2021)
     AddAsset() {
+      console.log(this.flashMessage.success({ title: 'Success Title', message: "text" }));
       this.currentState = true;
       this.asset = {};
     },
@@ -161,7 +164,7 @@ export default {
     //CreateBy: DDCong(26/03/2021)
     showDetail(asset) {
       this.asset = asset;
-    
+
       this.asset.departmentName = this.departments.find(
         (department) => department.departmentId === asset.departmentId
       )?.departmentName;
@@ -178,7 +181,8 @@ export default {
       )?.assetTypeCode;
       //  this.$root.getDepartmentName();
       this.currentState = true;
-       this.asset = JSON.parse(JSON.stringify(asset))
+      // this.asset.originalPrice = this.formatCurrency(this.asset.originalPrice);
+      this.asset = JSON.parse(JSON.stringify(asset));
     },
     //Đóng bản thêm dữ liệu
     closeDialog() {
@@ -304,13 +308,13 @@ export default {
         }
         return response;
       } else {
-        console.log(this.asset)
+        console.log(this.asset);
         const response = axios.put(
           this.BASE_URL + "/api/v1/assets",
           this.asset
         );
         this.currentState = false;
-        console.log(response);
+        this.refreshAsset();
         return response;
       }
     },
@@ -328,7 +332,7 @@ export default {
       return response;
     },
   },
-  mounted(){
+  mounted() {
     contextMenu.showContextMenuWithTable();
     contextMenu.hideContextMenu();
   },
