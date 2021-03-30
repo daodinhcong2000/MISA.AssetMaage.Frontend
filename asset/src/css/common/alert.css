@@ -56,11 +56,11 @@ opacity: 0.5;
     align-items: center;
     position: relative;
 }
-.alert-content > div{
+.text-alert{
     font-size: 20px;
     position: absolute;
     top: 20px;
-    left: 60px;
+    left: 80px;
 }
 .alert-footer{
     height: 25%;
@@ -91,3 +91,14 @@ opacity: 0.5;
         border-radius: 4px;
         
     }
+    .icon-alert{
+        height: 30px;
+        width: 30px;
+        background-image: url("../../assets/Icon/alert-icon.png");
+        position: absolute;
+        background-size: contain;
+        top: 20px;
+        left: 30px;
+    }
+
+

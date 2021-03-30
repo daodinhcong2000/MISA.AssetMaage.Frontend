@@ -100,6 +100,7 @@
     />
     <ContextMenu @addAsset="AddAsset()" />
     <FlashMessage />
+    <Notify  v-bind:message="message" v-if="statusNotify"/>
   </div>
 </template>
 
@@ -111,13 +112,21 @@ import axios from "axios";
 import ContextMenu from "../../common/ContextMenu";
 import contextMenu from "../../../js/comon/contextMenu";
 import FlashMessage from "@smartweb/vue-flash-message";
+import Notify from '../../common/Notify.vue';
+import { Notyf } from "notyf";
+import "notyf/notyf.min.css";
+const notyf = new Notyf({
+  duration: 3000,
+  position: { x: "right", y: "bottom" },
+});
 export default {
   name: "Asset",
   components: {
     AssetDetail,
     Alert,
     ContextMenu,
-    FlashMessage
+    FlashMessage,
+    Notify,
   },
   props: {},
   data: function () {
@@ -136,6 +145,8 @@ export default {
         errorName: "",
       },
       index: 0,
+      message: "",
+      statusNotify: false,
     };
   },
   methods: {
@@ -306,6 +317,11 @@ export default {
           console.log(this.errors.errorCode);
           this.currentState = false;
         }
+        console.log(response);
+        if(response.status == 201) {
+            notyf.success("Thêm thành công");
+        }
+        else notyf.error("Không thành công");
         return response;
       } else {
         console.log(this.asset);
@@ -314,7 +330,12 @@ export default {
           this.asset
         );
         this.currentState = false;
+        console.log(response);
         this.refreshAsset();
+         if(response.status == 200) {
+            notyf.success("Sửa thành công");
+        }
+        else notyf.error("Sửa thất bại");
         return response;
       }
     },
@@ -329,6 +350,10 @@ export default {
       });
       // this.refreshData();
       this.assets.splice(this.index, 1);
+      if(response.status == 200) {
+        notyf.success("Xóa thành công");
+      }
+      else notyf.error("Không xóa được");
       return response;
     },
   },
